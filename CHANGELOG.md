@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0
 
 - Questions get a short, direct answer first, with whether the models agree on it. The models
   judge each other's answers by looking at the photo; "cannot tell" counts as not answering.

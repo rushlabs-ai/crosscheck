@@ -1,6 +1,6 @@
 [project]
 name = "crosscheck-vision"
-version = "0.1.0"
+version = "0.2.0"
 description = "Several local vision models describe a photo; hear where they agree and where they disagree. For blind and low-vision users."
 readme = "README.md"
 requires-python = ">=3.10"
