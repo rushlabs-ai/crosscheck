@@ -21,6 +21,9 @@ DESCRIPTIONS = {
 }
 
 
+ANSWERS = {"a": "Ibuprofen 200 mg", "b": "Ibuprofen 400 mg", "c": "ibuprofen 200 mg."}
+
+
 def judge(model: str, statement: str) -> str:
     if "400" in statement and model == "a":
         return "no"
@@ -32,7 +35,7 @@ def judge(model: str, statement: str) -> str:
 
 
 class State:
-    def __init__(self, installed=("a:latest", "b:latest", "bad:latest")):
+    def __init__(self, installed=("a:latest", "b:latest", "c:latest", "bad:latest")):
         self.installed = list(installed)
         self.calls: list[dict] = []
 
@@ -64,14 +67,16 @@ def make_handler(state: State):
                 return self._json(400, {"error": "bad request from client"})
             if model == "bad":
                 return self._json(200, {"message": {"role": "assistant", "content": "{not json"}})
-            if model not in DESCRIPTIONS:
+            if model not in DESCRIPTIONS and model != "c":
                 return self._json(404, {"error": f"model '{model}' not found"})
             prompt = msg["content"]
             if "numbered statements" in prompt:
                 stmts = re.findall(r"^(\d+)\. (.+)$", prompt, re.MULTILINE)
                 out = {"answers": [{"n": int(n), "answer": judge(model, s)} for n, s in stmts]}
             else:
-                out = DESCRIPTIONS[model]
+                out = dict(DESCRIPTIONS.get(model) or DESCRIPTIONS["a"])
+                if "answer" in (body["format"].get("properties") or {}):
+                    out["answer"] = ANSWERS[model]
             self._json(200, {"model": model, "message": {"role": "assistant", "content": json.dumps(out)},
                              "total_duration": 2_500_000_000, "load_duration": 500_000_000, "eval_count": 40})
 

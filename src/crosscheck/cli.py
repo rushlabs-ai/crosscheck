@@ -16,7 +16,7 @@ from .pipeline import run
 
 # Three model families, so their mistakes are less likely to be shared. All run on a 12-16 GB GPU
 # one at a time (Ollama swaps them), or on a CPU, slowly.
-DEFAULT_MODELS = ["qwen3-vl:4b-instruct", "gemma4:e4b", "granite3.2-vision:2b"]
+DEFAULT_MODELS = ["qwen3-vl:4b-instruct", "gemma4:e4b", "ministral-3:3b"]
 
 
 def _models(arg: str | None) -> list[str]:

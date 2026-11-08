@@ -1,0 +1,4219 @@
+{
+  "summary": {
+    "questions": 100,
+    "abstained": 0.09,
+    "per_model_accuracy": {
+      "qwen3-vl:4b-instruct": 0.4,
+      "gemma4:e4b": 0.45,
+      "ministral-3:3b": 0.4
+    },
+    "per_model_vqa_accuracy": {
+      "qwen3-vl:4b-instruct": 0.067,
+      "gemma4:e4b": 0.143,
+      "ministral-3:3b": 0.033
+    },
+    "consensus_accuracy_when_answering": 0.56,
+    "all_agree_share_of_answers": 0.758,
+    "wrong_rate_when_all_agree": 0.391,
+    "wrong_rate_when_models_disagree": 0.591,
+    "wrong_answers_that_were_flagged": 0.325,
+    "counts": {
+      "answered": 91,
+      "all_agree": 69,
+      "disagree": 22,
+      "wrong": 40
+    },
+    "seconds_per_photo_median": 13.1,
+    "seconds_per_photo_p90": 41.6
+  },
+  "rows": [
+    {
+      "image": "VizWiz_val_00004210.jpg",
+      "question": "What about the color cloth. Tell me about the color cloth. ",
+      "answer_type": "other",
+      "crowd": [
+        "green white",
+        "white dark green print",
+        "white green",
+        "white green",
+        "pink green",
+        "cloth white cream green on",
+        "pink black",
+        "green white",
+        "purple black tie dye",
+        "white green splatters"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "It is a light purple and green patterned fabric.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "The photo does not prominently show a distinct cloth.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "The photo does not prominently show a distinct cloth.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 135.1
+    },
+    {
+      "image": "VizWiz_val_00002216.jpg",
+      "question": "Is there any text on this side of the paper please?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "no",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "no",
+        "no",
+        "unanswerable",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 9.1
+    },
+    {
+      "image": "VizWiz_val_00001920.jpg",
+      "question": "What kind of chips are these?",
+      "answer_type": "other",
+      "crowd": [
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "nacho cheese",
+        "doritos",
+        "doritos",
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "dorito nacho cheese",
+        "nacho cheese doritos"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Doritos Nacho Cheese chips",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Nacho Cheese",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Doritos Nacho Cheese chips",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Doritos Nacho Cheese chips",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 9.9
+    },
+    {
+      "image": "VizWiz_val_00001479.jpg",
+      "question": "Can you tell me the content of this notice?",
+      "answer_type": "other",
+      "crowd": [
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "No Smoking and Mind Your Head notices",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "No",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "No Smoking and Mind Your Head notices",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4226 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 8.3
+    },
+    {
+      "image": "VizWiz_val_00002025.jpg",
+      "question": "Is the dog lying on his bed?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Yes",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "No, the animal is inside a bed-like container.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "No, the animal is inside a bed-like container.",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 8.7
+    },
+    {
+      "image": "VizWiz_val_00000546.jpg",
+      "question": "What is this? Apple is very easy to use once  you start using it. That's the thing, but you have to start using it. Yes. Its like anything, when someone first started using the computer they couldn't use it.",
+      "answer_type": "other",
+      "crowd": [
+        "service unavailable window in browser",
+        "computer",
+        "monitor",
+        "computer monitor",
+        "apple tv",
+        "unanswerable",
+        "internet explorer",
+        "unanswerable",
+        "computer",
+        "tab that says service unavailable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A computer monitor",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Old computer monitor with a blank screen error message",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "A computer monitor",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 13.7
+    },
+    {
+      "image": "VizWiz_val_00001149.jpg",
+      "question": "If there is any text on the screen, what does it say? Thanks.",
+      "answer_type": "other",
+      "crowd": [
+        "os x utilities",
+        "os x utilities",
+        "os x utilities",
+        "unanswerable",
+        "os x utilities",
+        "dsx utilities",
+        "os x utilities",
+        "computer utilities",
+        "os x utilities",
+        "osx utilities"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "OS X Utilities\nRestore From Time Machine Backup\nReinstall OS X\nGet Help Online\nDisk Utility\nContinue\n\nMain object: laptop screen showing OS X Utilities menu\nText: quoted exactly\nColors: black screen, white text, red lid jar\nPosition: laptop on desk, window blinds behind\nQuantity: one laptop, one jar, multiple cables\nSafety: no hazards visible\nSummary: A laptop displays the OS X Utilities menu with options for system recovery and help.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "OS X Utilities",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The text on the screen reads exactly: 'OS X Utilities' followed by options: Restore From Time Machine Backup, Reinstall OS X, Get Help Online, Disk Utility.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "The text on the screen reads exactly: 'OS X Utilities' followed by options: Restore From Time Machine Backup, Reinstall OS X, Get Help Online, Disk Utility.",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {
+        "ministral-3:3b": "while checking: ministral-3:3b did not return valid JSON (Expecting value: line 272 column 33 (char 4556))"
+      },
+      "seconds": 52.4
+    },
+    {
+      "image": "VizWiz_val_00004314.jpg",
+      "question": "what is this?",
+      "answer_type": "other",
+      "crowd": [
+        "salad dressing back side",
+        "dressing",
+        "salad dressing",
+        "salad dressing",
+        "balsamic salad dressing",
+        "salad dressing",
+        "unanswerable",
+        "salad dressing",
+        "salad dressing",
+        "salad dressing"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "bottle of salad dressing",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Two bottles of liquid",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Newman's Own Raspberry Walnut Syrup",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "bottle of salad dressing",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 15.9
+    },
+    {
+      "image": "VizWiz_val_00003106.jpg",
+      "question": "What color is my book bag?",
+      "answer_type": "other",
+      "crowd": [
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey off white",
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "blue and gray book bag",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Blue and grey",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The backpack appears to be dark grey/black.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "blue and gray book bag",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 11.2
+    },
+    {
+      "image": "VizWiz_val_00003545.jpg",
+      "question": "What color is this iPhone case?",
+      "answer_type": "other",
+      "crowd": [
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "case grey",
+        "black",
+        "black",
+        "dark grey",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "dark gray with glittery texture",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Grey",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "black",
+          "vqa": 1.0,
+          "correct": true
+        }
+      },
+      "consensus": "dark gray with glittery texture",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 10.8
+    },
+    {
+      "image": "VizWiz_val_00000847.jpg",
+      "question": "What does this say?",
+      "answer_type": "other",
+      "crowd": [
+        "icons",
+        "reaper quick time audacity other icons",
+        "computer menu",
+        "list programs quicktime thunderbird etc",
+        "unanswerable",
+        "unanswerable",
+        "icons on screen",
+        "thunderbird",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Desktop icons",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Various words and icons",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "This shows app icons with readable text.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "This shows app icons with readable text.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {
+        "ministral-3:3b": "while checking: ministral-3:3b did not return valid JSON (Unterminated string starting at: line 337 column 27 (char 5965))"
+      },
+      "seconds": 70.4
+    },
+    {
+      "image": "VizWiz_val_00002074.jpg",
+      "question": "What CD is this?",
+      "answer_type": "other",
+      "crowd": [
+        "blank",
+        "blank cd",
+        "maxwell",
+        "maxell cd r",
+        "blank",
+        "blank",
+        "blanket",
+        "blank",
+        "blank",
+        "maxell"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Maxell CD-R disc",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "CD-R with '14EXEL' text",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Maxell CD-R disc",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 13.2
+    },
+    {
+      "image": "VizWiz_val_00003929.jpg",
+      "question": "What order did the controls appear in Low-high warm or high-low warm?",
+      "answer_type": "other",
+      "crowd": [
+        "off low high warm",
+        "low",
+        "off low high warm",
+        "gfdg",
+        "low",
+        "off low high warm",
+        "low high warm",
+        "unanswerable",
+        "low high warm",
+        "low high warm"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Low, then High, then Warm",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Low, High, Warm",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Low-high",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Low, then High, then Warm",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 13.8
+    },
+    {
+      "image": "VizWiz_val_00004238.jpg",
+      "question": "What's this?",
+      "answer_type": "other",
+      "crowd": [
+        "keyboard buttons",
+        "keyboard",
+        "computer keyboard",
+        "keyboard",
+        "keyboard",
+        "keys",
+        "keyboard",
+        "keyboard",
+        "keyboard",
+        "keyboard"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "keyboard keys",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A keyboard",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Keyboard layout",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "keyboard keys",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 14.2
+    },
+    {
+      "image": "VizWiz_val_00002671.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "battery bank",
+        "portable charger",
+        "cell phone",
+        "mouse",
+        "phone",
+        "either external drive power bank",
+        "unanswerable",
+        "phone",
+        "mouse",
+        "cell phone"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "mobile hotspot device",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A mobile hotspot device",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Mobile hotspot device",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "mobile hotspot device",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 10.5
+    },
+    {
+      "image": "VizWiz_val_00002488.jpg",
+      "question": "Can you tell me what the conventional oven preheat temperature is and for how many minutes?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "unanswerable",
+        "375 degrees 20 25 minutes",
+        "375 20 to 25 minutes",
+        "375 for 20 to 25 minutes",
+        "375 for 20 to 25 minutes",
+        "unanswerable",
+        "375",
+        "375 degrees for 20 25 minutes",
+        "375 20 25"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "375°F for 20 to 25 minutes",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Preheat to 375°F for approximately 20 to 25 minutes",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "375°F for 20 to 25 minutes",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 14.3
+    },
+    {
+      "image": "VizWiz_val_00002296.jpg",
+      "question": "Can you please tell me what kind of tea this is?",
+      "answer_type": "other",
+      "crowd": [
+        "tazo earl grey",
+        "earl grey",
+        "tazo earl grey",
+        "earl grey",
+        "earl grey",
+        "earl grey",
+        "earl grey",
+        "earl grey",
+        "tazo earl grey",
+        "tazo earl grey black tea"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Earl Grey tea packet",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Earl Grey",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "This is Earl Grey tea.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Earl Grey tea packet",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 12.8
+    },
+    {
+      "image": "VizWiz_val_00001526.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "pears",
+        "can",
+        "pears",
+        "pears",
+        "pears",
+        "unanswerable",
+        "can food",
+        "can",
+        "canned pears",
+        "nutritional"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "can of pears",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A nutrition label on a food container",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Nutritional label on a canned pear drink",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Nutritional label on a canned pear drink",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 20.0
+    },
+    {
+      "image": "VizWiz_val_00001722.jpg",
+      "question": "What flavor are these pringles?",
+      "answer_type": "other",
+      "crowd": [
+        "thai sweet chili",
+        "chai sweet chilu",
+        "chili",
+        "thai sweet chili",
+        "thai sweet chili",
+        "thai sweet chili",
+        "thai sweet chili",
+        "prngles flavor",
+        "thai sweet chili",
+        "thai sweet chilli"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Thai Sweet Chili",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Thai Sweet Chilli",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Thai Sweet Chili",
+          "vqa": 1.0,
+          "correct": true
+        }
+      },
+      "consensus": "Thai Sweet Chili",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 11.5
+    },
+    {
+      "image": "VizWiz_val_00001224.jpg",
+      "question": "Can you tell me what's in this jar please?  ",
+      "answer_type": "other",
+      "crowd": [
+        "mayonnaise",
+        "salad dressing",
+        "mayonnaise",
+        "salad dressing",
+        "dressing",
+        "dressing",
+        "salad dressing",
+        "salad dressing",
+        "dressing",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "mayonnaise jar",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "It appears to be a jar of **mayonnaise**.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "mayonnaise jar",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 13.8
+    },
+    {
+      "image": "VizWiz_val_00000037.jpg",
+      "question": "Hi, I just wanted to confirm that these are indeed pork chops. Any other information that is clear would be appreciated. Thank you.",
+      "answer_type": "yes/no",
+      "crowd": [
+        "yes",
+        "yes",
+        "yes kirkland signature pork chops",
+        "yes porkchops",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes loin chops",
+        "yes"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Yes, pork chops.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Yes, it says 'CHOPS BONLESS'",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Yes, these are pork chops.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Yes, pork chops.",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 11,
+      "failed": {},
+      "seconds": 27.4
+    },
+    {
+      "image": "VizWiz_val_00002891.jpg",
+      "question": "What kind of dog is this?",
+      "answer_type": "other",
+      "crowd": [
+        "dalmation",
+        "dalmation",
+        "dalmation",
+        "dalmatian",
+        "dalmatian",
+        "dalmation",
+        "puppy",
+        "dalmatian",
+        "dalmatian",
+        "dalmation"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Dalmatian dog on couch",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Dalmatian",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Dalmatian mix",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Dalmatian",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 13.6
+    },
+    {
+      "image": "VizWiz_val_00000905.jpg",
+      "question": "Can you tell me what this is?",
+      "answer_type": "other",
+      "crowd": [
+        "articles for blind",
+        "cd",
+        "reverse cd",
+        "articles for blind disk",
+        "cd",
+        "disk",
+        "book on cd",
+        "cd",
+        "cd articles for blind",
+        "spear by james herbert dvd"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "CD for blind people",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "It is a CD case for an audiobook.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "CD with RNIB branding",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "CD for blind people",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 10,
+      "failed": {},
+      "seconds": 17.0
+    },
+    {
+      "image": "VizWiz_val_00002801.jpg",
+      "question": "What is the color of this blouse?",
+      "answer_type": "other",
+      "crowd": [
+        "blue",
+        "blue",
+        "unanswerable",
+        "blue",
+        "blue",
+        "blue",
+        "unanswerable",
+        "blue",
+        "blue",
+        "blue"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "blue",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "blue",
+      "agreement": "single",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {
+        "ministral-3:3b": "while checking: ministral-3:3b did not return valid JSON (Expecting property name enclosed in double quotes: line 263 column 16 (char 4475))"
+      },
+      "seconds": 50.6
+    },
+    {
+      "image": "VizWiz_val_00001544.jpg",
+      "question": "Hi, can you please tell me what flavor this is?  ",
+      "answer_type": "other",
+      "crowd": [
+        "creamy chicken",
+        "unanswerable",
+        "cream carbon",
+        "no",
+        "unanswerable",
+        "no",
+        "creamy carbonara",
+        "unanswerable",
+        "unanswerable",
+        "cream carbonara"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Stir-in cream sauce for pasta (caramel flavor)",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Stir-in cream sauce for pasta (caramel flavor)",
+      "agreement": "single",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 11.1
+    },
+    {
+      "image": "VizWiz_val_00003257.jpg",
+      "question": "Can you tell me what colors are on my shirt?",
+      "answer_type": "other",
+      "crowd": [
+        "grey black white",
+        "white light grey dark grey black",
+        "striped light grey dark grey white black",
+        "dark grey light grey white",
+        "grey black white stripes",
+        "grey black white",
+        "black white grey",
+        "yes i can will i no",
+        "grey",
+        "light medium dark grey white black"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "striped shirt",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Grey, white, and black",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The shirt’s colors are visible.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Grey, white, and black",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 9.6
+    },
+    {
+      "image": "VizWiz_val_00000047.jpg",
+      "question": "what is this we taking a picture of?",
+      "answer_type": "other",
+      "crowd": [
+        "boobs",
+        "unanswerable",
+        "boobs",
+        "chest",
+        "fingers floral fabric part green shirt button pocket",
+        "chest",
+        "clothing",
+        "cleavage",
+        "shirts",
+        "shirt"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A person's torso and clothing",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A close-up of a person’s hand adjusting a decorative fabric item",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A person's torso and clothing",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 11.4
+    },
+    {
+      "image": "VizWiz_val_00000370.jpg",
+      "question": "Could you tell me if I need to hit enter or can you actually tell if I need to do something else?",
+      "answer_type": "other",
+      "crowd": [
+        "yes accept terms",
+        "probably hit enter",
+        "you must agree license terms",
+        "click on accept license terms",
+        "check check box",
+        "click accept license terms",
+        "click on clear box",
+        "click left mouse key then enter",
+        "accept microsoft terms",
+        "accept terms"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 14.0
+    },
+    {
+      "image": "VizWiz_val_00000195.jpg",
+      "question": "What does the screen on my TV say?",
+      "answer_type": "other",
+      "crowd": [
+        "starz encore call us at",
+        "starz",
+        "starz",
+        "unanswerable",
+        "call number to order premium channels",
+        "starz",
+        "starz encore",
+        "unanswerable",
+        "ad for starz premium",
+        "starz channels offer"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Starz and promotional text",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Starz promotional offer for premium content",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Starz and promotional text",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 13.4
+    },
+    {
+      "image": "VizWiz_val_00002460.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "mtn dew bottle",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mt dew"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "green soda bottle",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A green bottle of soda",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Green sports drink bottle",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Green sports drink bottle",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 11,
+      "failed": {},
+      "seconds": 11.7
+    },
+    {
+      "image": "VizWiz_val_00000555.jpg",
+      "question": "Can you tell me what the screen says? The screen capture security code please.",
+      "answer_type": "other",
+      "crowd": [
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "The security code is 'nyxene'",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "The security code is 'nyxene'",
+      "agreement": "single",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 12.4
+    },
+    {
+      "image": "VizWiz_val_00002594.jpg",
+      "question": "how many nachos over to the left and or right is the setting bulky?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "1 notch to right",
+        "1 notch to right",
+        "unanswerable",
+        "unanswerable",
+        "1 notch to right",
+        "1 right",
+        "1 notch right",
+        "no nachos visible setting normal",
+        "1 right"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 14.5
+    },
+    {
+      "image": "VizWiz_val_00003042.jpg",
+      "question": "What product is this?",
+      "answer_type": "other",
+      "crowd": [
+        "s",
+        "hamburger helper",
+        "unanswerable",
+        "mac cheese",
+        "mac n cheese",
+        "beef cheese macaroni",
+        "mac n cheese",
+        "macaroni cheese",
+        "macaroni",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "macaroni and cheese with meat bits",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Sliced fruit",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "macaroni and cheese with meat bits",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 10.2
+    },
+    {
+      "image": "VizWiz_val_00002232.jpg",
+      "question": "What flavor is this?",
+      "answer_type": "other",
+      "crowd": [
+        "rum",
+        "original jamaica rum",
+        "jamaica rum",
+        "rum",
+        "rum",
+        "jamaica rum",
+        "unanswerable",
+        "jamaica rum",
+        "jamaican rum",
+        "jamaica rum"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Jamaica Rum Cream Liqueur",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Jamaica Rum",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Jamaica Rum flavor",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Jamaica Rum",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 15.0
+    },
+    {
+      "image": "VizWiz_val_00000548.jpg",
+      "question": "What's, what's on the screen this time?",
+      "answer_type": "other",
+      "crowd": [
+        "pop up",
+        "computer screen",
+        "window",
+        "unanswerable",
+        "cant make out",
+        "computer will restart several times",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Windows installation screen",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Windows installation screen",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Windows installation progress screen",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Windows installation screen",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 12.3
+    },
+    {
+      "image": "VizWiz_val_00002328.jpg",
+      "question": "Can you please tell me what the dryer's set to, and which way does it turn it to increase the temperature? Thank you very much.",
+      "answer_type": "other",
+      "crowd": [
+        "currently at normal turn left for jeans then heavy duty",
+        "set at normal no way to change temperature setting",
+        "normal down",
+        "dryer set to normal turn knob counter clockwise for heavy duty loads",
+        "dryer set to normal you turn to left to increase temperature",
+        "normal turn dial 2 notches left to heavy duty",
+        "normal",
+        "unanswerable",
+        "normal turn to left to increase temp",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "The dryer is set to **Timed Dry** cycle with an estimated remaining time of **38 minutes**. To increase temperature, turn the dial **counterclockwise**.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "The dryer is set to **Timed Dry** cycle with an estimated remaining time of **38 minutes**. To increase temperature, turn the dial **counterclockwise**.",
+      "agreement": "single",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 15.5
+    },
+    {
+      "image": "VizWiz_val_00001678.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "fiber n mor",
+        "fiber n mor",
+        "fiber n mor",
+        "dietary supplement",
+        "fiber n mor dietary supplement",
+        "fiber dietary supplement",
+        "fiber",
+        "fiber pills",
+        "fiber n mor supplements",
+        "fiber"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Fiber-n-Mor capsules",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A bottle of Fiber n MOR dietary supplement.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Fiber-n-Mor dietary supplement bottle",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Fiber-n-Mor capsules",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 13.4
+    },
+    {
+      "image": "VizWiz_val_00004018.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "this food item",
+        "ravioli",
+        "ravioli",
+        "ravioli",
+        "ravioli",
+        "chef boyardee mini raviolis",
+        "canned mini ravioli",
+        "ravioli",
+        "chef boya mini ravioli",
+        "mini ravioli"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "can of Chef Boyardee Minestrone Soup",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A can of Chef Boyardee",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Canned mixed ravioli sauce",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "can of Chef Boyardee Minestrone Soup",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 12.4
+    },
+    {
+      "image": "VizWiz_val_00004301.jpg",
+      "question": "What is in this can?",
+      "answer_type": "other",
+      "crowd": [
+        "green beans",
+        "beans",
+        "green beans",
+        "green beans",
+        "green beans",
+        "green beans",
+        "unanswerable",
+        "green beans",
+        "unanswerable",
+        "green beans"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Green beans in can",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Maple Green",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Chopped tomatoes and peppers (salsa) in a canned food product.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Green beans in can",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 11,
+      "failed": {},
+      "seconds": 13.1
+    },
+    {
+      "image": "VizWiz_val_00000725.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "belly",
+        "stomach",
+        "belly",
+        "stomach",
+        "abdomen",
+        "stomach",
+        "that stomach",
+        "back",
+        "abs",
+        "stomach"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "person's back, shirt lifted, showing waistband and jeans",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A person's midriff",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Person’s midsection and lower back",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "person's back, shirt lifted, showing waistband and jeans",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {},
+      "seconds": 12.1
+    },
+    {
+      "image": "VizWiz_val_00000197.jpg",
+      "question": "Can you please tell me the 1-800 number on this card?",
+      "answer_type": "other",
+      "crowd": [
+        "800 735 2929",
+        "1 877 328 9677 1 80 732 2929",
+        "1 800 735 2929",
+        "1 877 328 9677",
+        "8007352929",
+        "1 877 328 9677",
+        "1 877 328 9677",
+        "18773289677",
+        "1 877 328 9677",
+        "18007352929"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "1-800-735-2929",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "1-800-735-2929",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "1-800-735-2929",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        }
+      },
+      "consensus": "1-800-735-2929",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 13.3
+    },
+    {
+      "image": "VizWiz_val_00000803.jpg",
+      "question": "What colors are in this shirt?",
+      "answer_type": "other",
+      "crowd": [
+        "red white",
+        "maroon",
+        "red white",
+        "red white stripes",
+        "red white stripes",
+        "red white",
+        "red white",
+        "red white",
+        "red white",
+        "red white"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Red and white",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Red and white stripes",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Red and white",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {
+        "qwen3-vl:4b-instruct": "qwen3-vl:4b-instruct did not return valid JSON (Unterminated string starting at: line 1 column 12 (char 11))"
+      },
+      "seconds": 42.3
+    },
+    {
+      "image": "VizWiz_val_00001345.jpg",
+      "question": "What box am I looking at, as in what does the box contain?",
+      "answer_type": "other",
+      "crowd": [
+        "granola bar box",
+        "nature valley roasted almond granola bars",
+        "granola bars",
+        "nature valley",
+        "roasted almond granola bars",
+        "nature valley roasted almond granola bars",
+        "nature valley crunchy granola bars roasted almond flavor",
+        "granola bars",
+        "granola bars",
+        "roasted almond crunchy granola bars"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Nature Valley Crunchy Granola Bars (Roasted Almond flavor)",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Granola bars",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Nature Valley Crunchy Granola Bars with Roasted Almonds",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Nature Valley Crunchy Granola Bars (Roasted Almond flavor)",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 37.6
+    },
+    {
+      "image": "VizWiz_val_00003374.jpg",
+      "question": "What is the replacement for R22?",
+      "answer_type": "other",
+      "crowd": [
+        "isceon mo99 refrigerant",
+        "isceon",
+        "isceon mo99",
+        "isceon",
+        "google search",
+        "isceon mo",
+        "unanswerable",
+        "isceon mo99",
+        "unanswerable",
+        "isceon mo99"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "ISCEON MO99 refrigerant - DuPont",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "R22 replacement refrigerants",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "The replacement for R22 is ISCEON MO99 (DuPont).",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "ISCEON MO99 refrigerant - DuPont",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 16.4
+    },
+    {
+      "image": "VizWiz_val_00003100.jpg",
+      "question": "What did I just take a picture of",
+      "answer_type": "other",
+      "crowd": [
+        "grass cement part christmas sweater",
+        "grass",
+        "ground",
+        "grass concrete",
+        "ground",
+        "floor",
+        "dead grass",
+        "cement",
+        "ground",
+        "floor"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "concrete edge and dry grass",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A concrete curb next to dry grass",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A patch of pavement and grassy area near a curb",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A patch of pavement and grassy area near a curb",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {
+        "ministral-3:3b": "while checking: ministral-3:3b did not return valid JSON (Expecting value: line 264 column 12 (char 4486))"
+      },
+      "seconds": 53.5
+    },
+    {
+      "image": "VizWiz_val_00003656.jpg",
+      "question": "What does the the CAPTCHA say?",
+      "answer_type": "other",
+      "crowd": [
+        "w2nmv5fz",
+        "w2nmv5fz",
+        "w2nmv5fz",
+        "unanswerable",
+        "unanswerable",
+        "w2nmv5fz",
+        "w2nmv5fz",
+        "wvvskz",
+        "w2nvn5fz",
+        "w2nmv5fz"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "W2N55V5Z",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot read CAPTCHA",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot read CAPTCHA",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {
+        "ministral-3:3b": "while checking: ministral-3:3b did not return valid JSON (Expecting property name enclosed in double quotes: line 245 column 7 (char 4131))"
+      },
+      "seconds": 51.6
+    },
+    {
+      "image": "VizWiz_val_00002512.jpg",
+      "question": "What card is this and is it right side up or upside down thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "news",
+        "9 upside down",
+        "unanswerable",
+        "says 9 right side up",
+        "9 torches",
+        "upside down",
+        "upside down",
+        "unanswerable",
+        "9",
+        "9 only visible word"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Nine of Swords, right side up",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Nine of Clubs, right side up",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "This is the **Nine of Pentacles** card, right side up.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Nine of Swords, right side up",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 12.1
+    },
+    {
+      "image": "VizWiz_val_00000790.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "radio",
+        "universal remote",
+        "phone",
+        "cellphone",
+        "unanswerable",
+        "cordless phone",
+        "controller",
+        "audio recorder",
+        "recorder",
+        "phone"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A digital camera",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A smartphone with a flashlight feature being used",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A digital camera",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 12,
+      "failed": {},
+      "seconds": 12.8
+    },
+    {
+      "image": "VizWiz_val_00000201.jpg",
+      "question": "Can you read this seven day forecast and write it out in the app so I can use voice over to read it? It's a seven day forecast",
+      "answer_type": "other",
+      "crowd": [
+        "wed 100 thu 101 80 fri 102 80 sat 10280 sun 101 80 mon 10081 tues 100 80",
+        "wed 100 thu 101 fri 100 sat 102 sun 101 mon 100 tue 100",
+        "100 101 100 102 101 100 100",
+        "unanswerable",
+        "100 80 101 81 100 80 102 80 101 80 1000 81 100 80",
+        "yes",
+        "yes",
+        "yes",
+        "wed 100 thu 101 80 fri100 81 sat102 80 sun101 80 mon100 81 tue 100 80",
+        "yes wed 100 thu 100 fri 100 sat 102 sun 101 mon 100 tue 100"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Here is the seven-day forecast.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Here’s the forecast as text for voice reading.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Here’s the forecast as text for voice reading.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 13,
+      "failed": {},
+      "seconds": 15.7
+    },
+    {
+      "image": "VizWiz_val_00002044.jpg",
+      "question": "What seasoning is this?",
+      "answer_type": "other",
+      "crowd": [
+        "steak",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "steak rub",
+        "montreal steak",
+        "steak",
+        "steak",
+        "cajun style",
+        "steak"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 13.6
+    },
+    {
+      "image": "VizWiz_val_00000585.jpg",
+      "question": "What picture is this?",
+      "answer_type": "other",
+      "crowd": [
+        "laptop",
+        "laptop",
+        "laptop",
+        "computer",
+        "laptop computer",
+        "computer",
+        "laptop",
+        "laptop computer",
+        "laptop screen",
+        "laptop"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "laptop on desk next to bed",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A laptop on a table",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Laptop on a bed",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "laptop on desk next to bed",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 10,
+      "failed": {},
+      "seconds": 13.9
+    },
+    {
+      "image": "VizWiz_val_00003289.jpg",
+      "question": "What's this?",
+      "answer_type": "other",
+      "crowd": [
+        "computer keys",
+        "unanswerable",
+        "computer keyboard",
+        "keyboard colon",
+        "keyboard",
+        "keyboard",
+        "video display",
+        "keyboard",
+        "keyboard",
+        "keyboard"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "keyboard",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A close-up of a keyboard",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Control panel of an aircraft",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A close-up of a keyboard",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 12.4
+    },
+    {
+      "image": "VizWiz_val_00001477.jpg",
+      "question": "Can you tell what's on this menu?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "unanswerable",
+        "unanswerable",
+        "no",
+        "breakfast",
+        "unanswerable",
+        "no",
+        "food",
+        "no",
+        "unanswerable"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "It is a breakfast menu.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "This is a menu for breakfast items.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "It is a breakfast menu.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4225 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 12.0
+    },
+    {
+      "image": "VizWiz_val_00002325.jpg",
+      "question": "What color is this?",
+      "answer_type": "other",
+      "crowd": [
+        "white",
+        "white",
+        "yellow",
+        "yellow",
+        "yellow",
+        "yellow",
+        "white",
+        "yellow",
+        "white",
+        "yellow"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "yellow polo shirt",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Yellow",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The shirt is light yellow/cream.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "yellow polo shirt",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 13.6
+    },
+    {
+      "image": "VizWiz_val_00003176.jpg",
+      "question": "can i get the name of the team please for rickey henderson thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "dodgers",
+        "yankees",
+        "oakland athletics",
+        "unanswerable",
+        "oakland athletics",
+        "that information not available on here",
+        "athletics",
+        "wargawrgh",
+        "athletics yankees",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Athletics",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        }
+      },
+      "consensus": "Athletics",
+      "agreement": "single",
+      "consensus_correct": true,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 9,
+      "failed": {
+        "gemma4:e4b": "gemma4:e4b did not return valid JSON (Unterminated string starting at: line 7 column 1 (char 365))"
+      },
+      "seconds": 41.6
+    },
+    {
+      "image": "VizWiz_val_00002102.jpg",
+      "question": "Can you tell me what these are called?",
+      "answer_type": "other",
+      "crowd": [
+        "ervgrg",
+        "unanswerable",
+        "cotton",
+        "unanswerable",
+        "unanswerable",
+        "socks",
+        "towels",
+        "unanswerable",
+        "towels",
+        "socks"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "white packaged blanket",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Baby blankets or swaddles",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "These are incontinence pads.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Baby blankets or swaddles",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 10,
+      "failed": {},
+      "seconds": 12.9
+    },
+    {
+      "image": "VizWiz_val_00003173.jpg",
+      "question": "What is a picture?",
+      "answer_type": "other",
+      "crowd": [
+        "grey kitten",
+        "cat",
+        "kitten",
+        "kitten",
+        "cat",
+        "kitten",
+        "cat",
+        "cat",
+        "kitten",
+        "kitten"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "picture of sleeping kitten",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A sleeping kitten",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "A visual representation of a moment.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A visual representation of a moment.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 13.0
+    },
+    {
+      "image": "VizWiz_val_00003147.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "white ginger",
+        "unanswerable",
+        "unanswerable",
+        "white ginger smelling small soap tea packet",
+        "unanswerable",
+        "rug",
+        "carpet",
+        "rug",
+        "rug",
+        "tea"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A small packet on a patterned bedspread",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A tube of lip balm or lip care product",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A small packet on a patterned bedspread",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4220 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 7.2
+    },
+    {
+      "image": "VizWiz_val_00002386.jpg",
+      "question": "Does this microwave say on it?",
+      "answer_type": "other",
+      "crowd": [
+        "5:26",
+        "5:26",
+        "5:26",
+        "5:26",
+        "hamilton beach",
+        "5:26",
+        "hamilton beach",
+        "526",
+        "5:26",
+        "5:26"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "No",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Yes, it says 'Hamilton Beach' on it.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Yes, it says 'Hamilton Beach' on it.",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 15.8
+    },
+    {
+      "image": "VizWiz_val_00000359.jpg",
+      "question": "can you tell what restaurant this is?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "big 1",
+        "no",
+        "no",
+        "unanswerable",
+        "no",
+        "no",
+        "big 1",
+        "no",
+        "no",
+        "unanswerable"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell exact name, but likely a BBQ restaurant",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 0,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4224 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 9.6
+    },
+    {
+      "image": "VizWiz_val_00002121.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "plaid",
+        "shirt",
+        "unanswerable",
+        "red plaid",
+        "pink red plaid shirt",
+        "pink plaid",
+        "unanswerable",
+        "unanswerable",
+        "pink red flannel blanket",
+        "pink plaid blanket"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "plaid fabric",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A piece of patterned fabric",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A close-up of a fabric texture",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "plaid fabric",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 12.4
+    },
+    {
+      "image": "VizWiz_val_00000510.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "computer on desk",
+        "computer",
+        "computer desk",
+        "desk",
+        "computer on desk",
+        "desktop computer on small desk",
+        "computer desk",
+        "computer",
+        "workstation computer",
+        "computer desk desktop computer on"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "computer desk setup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A computer desk setup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "A cluttered home workspace with an old computer setup",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "A computer desk setup",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 10,
+      "failed": {},
+      "seconds": 12.9
+    },
+    {
+      "image": "VizWiz_val_00001628.jpg",
+      "question": "What color is this and what is it?",
+      "answer_type": "other",
+      "crowd": [
+        "grey black michael kors handbag",
+        "white black handbag",
+        "brown handbag",
+        "grey black michael kors hand bag",
+        "tan purse",
+        "white gold print purse",
+        "beige pocketbook",
+        "white black purse",
+        "tan brown purse",
+        "tan brown mk purse"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Michael Kors handbag",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "It is a beige and black patterned handbag.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "It is a handbag; beige with black text and gold accents.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Michael Kors handbag",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 14.5
+    },
+    {
+      "image": "VizWiz_val_00002196.jpg",
+      "question": "Can you see the cooking instructions, please?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "unanswerable",
+        "no",
+        "no",
+        "no",
+        "no",
+        "unanswerable",
+        "no",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot see full instructions",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 10,
+      "failed": {},
+      "seconds": 12.5
+    },
+    {
+      "image": "VizWiz_val_00001909.jpg",
+      "question": "Which flavor is this?",
+      "answer_type": "other",
+      "crowd": [
+        "broccoli cheese potato",
+        "broccoli cheese potato",
+        "unanswerable",
+        "broccoli cheese potato",
+        "broccoli cheese potato",
+        "broccoli cheese potato",
+        "chicken broccoli cheese potato",
+        "broccoli cheese",
+        "broccoli cheese potato",
+        "hunky"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Chicken Broccoli Cheese with Potato",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Broccoli Cheese with Potato",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Green Broccoli Cheese with Potato",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Chicken Broccoli Cheese with Potato",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 13.2
+    },
+    {
+      "image": "VizWiz_val_00004194.jpg",
+      "question": "What color is this tablet?",
+      "answer_type": "other",
+      "crowd": [
+        "white",
+        "church notebook",
+        "brown",
+        "white",
+        "white",
+        "white",
+        "tan",
+        "tan",
+        "unanswerable",
+        "whote"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Brown",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Brown",
+      "agreement": "single",
+      "consensus_correct": false,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 10.7
+    },
+    {
+      "image": "VizWiz_val_00000176.jpg",
+      "question": "What's going on on the computer screen?",
+      "answer_type": "other",
+      "crowd": [
+        "just blue green screen",
+        "unanswerable",
+        "looks broken somewhat",
+        "blank screen",
+        "unanswerable",
+        "all blue",
+        "blank lines",
+        "unanswerable",
+        "unanswerable",
+        "blue screen"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A blue and teal gradient screen",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Foggy sky with indistinct horizon",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A blue and teal gradient screen",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {
+        "ministral-3:3b": "while checking: ministral-3:3b did not return valid JSON (Expecting property name enclosed in double quotes: line 350 column 7 (char 5018))"
+      },
+      "seconds": 50.0
+    },
+    {
+      "image": "VizWiz_val_00001540.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "diet coke soda",
+        "diet coke can",
+        "diet coke",
+        "can diet coke",
+        "diet coke",
+        "diet coke",
+        "diet coke",
+        "coke",
+        "soda",
+        "can diet coke"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A can of soda",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A blurred receipt or ticket with numbers",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A can of soda",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4220 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 6.9
+    },
+    {
+      "image": "VizWiz_val_00002578.jpg",
+      "question": "which pot pie is this?",
+      "answer_type": "other",
+      "crowd": [
+        "cheesy ham potato",
+        "cheesy ham potato",
+        "cheesy ham potato",
+        "cheesy ham potato",
+        "deep dish cheesy ham potato",
+        "deep dish cheesy ham potato",
+        "cheese ham potato",
+        "cheesy ham potatoes",
+        "cheese ham potatoe",
+        "banquet"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Banquet pot pie",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Banquet Chicken Pot Pie",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Banquet pot pie",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 13.1
+    },
+    {
+      "image": "VizWiz_val_00000349.jpg",
+      "question": "Can you read the screen? Thank you.",
+      "answer_type": "yes/no",
+      "crowd": [
+        "unanswerable",
+        "yes",
+        "no",
+        "no",
+        "yes",
+        "no",
+        "unanswerable",
+        "no",
+        "unanswerable",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Yes, I can read the screen.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "yes",
+          "vqa": 0.6666666666666666,
+          "correct": true
+        }
+      },
+      "consensus": "Yes, I can read the screen.",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 14.5
+    },
+    {
+      "image": "VizWiz_val_00000518.jpg",
+      "question": "What is that?",
+      "answer_type": "other",
+      "crowd": [
+        "computers monitor keyboard",
+        "monitor",
+        "computer monitor",
+        "computer screen",
+        "computer",
+        "computer monitor",
+        "computer screen",
+        "desktop",
+        "graph",
+        "graph"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "computer monitor showing a Google Sites page with a table of hearts and a blank table below it",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A computer monitor",
+          "vqa": 0.6666666666666666,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Computer monitor with open document",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "computer monitor showing a Google Sites page with a table of hearts and a blank table below it",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 17,
+      "failed": {},
+      "seconds": 17.4
+    },
+    {
+      "image": "VizWiz_val_00004152.jpg",
+      "question": "Which movie is this?",
+      "answer_type": "other",
+      "crowd": [
+        "banden over alle bander",
+        "banoen over alle banoer",
+        "unanswerable",
+        "banden over alle bander",
+        "olsen banden",
+        "banden over alle bander",
+        "banden over alle bander olsen banden",
+        "olsen banden",
+        "olsen banden",
+        "olsen banden"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Band of Brothers: All Over the World (DVD cover)",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Olsen-Banden",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The movie is 'Oppen-Banden' (Bandens Over Alle Bande)",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Olsen-Banden",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 20.3
+    },
+    {
+      "image": "VizWiz_val_00003085.jpg",
+      "question": "What flavor and brand of cake is this please? Thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "tullys coffee french roast",
+        "unanswerable",
+        "french roast",
+        "unanswerable",
+        "french roast",
+        "unanswerable",
+        "unanswerable",
+        "french roast",
+        "tullys french roast",
+        "not cake"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Cannot tell exact flavor, but it appears to be a brand called 'Chestnut Roast' from 'Chestnut' (likely a cake mix or boxed product).",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 11.5
+    },
+    {
+      "image": "VizWiz_val_00003105.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "label",
+        "label on wine bottle",
+        "bottle wine",
+        "label",
+        "wine",
+        "bottle",
+        "bottle wine",
+        "label",
+        "wine",
+        "bottle"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "wine bottle label",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A wine bottle label",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Alcoholic beverage bottle with warning labels",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "wine bottle label",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 18.1
+    },
+    {
+      "image": "VizWiz_val_00004236.jpg",
+      "question": "What is this item?",
+      "answer_type": "other",
+      "crowd": [
+        "roach tablets",
+        "roach tablets",
+        "roach tablets",
+        "roach tablets",
+        "roach tablets",
+        "famous roach tablets",
+        "roach kill",
+        "roach tablets",
+        "harris famous roach tablets",
+        "roach tablets"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Roach tablets",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A package of Roach Tablets",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Roach motel product packaging",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Roach tablets",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 13.5
+    },
+    {
+      "image": "VizWiz_val_00002153.jpg",
+      "question": "Can you tell me what tablets these are please? Thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "omeprazole",
+        "omeprazole",
+        "unanswerable",
+        "gastrointestinal",
+        "omperazole 20 mg",
+        "omeprazole",
+        "omeprazole",
+        "omeprazole",
+        "omeprazole 20 mg",
+        "omeprazole 20 mg"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Omeprazole 20mg capsules, 28 count, gastro-resistant, Bristol-Myers Squibb brand, pink box, on patterned fabric background.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Omeprazole capsules",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "These are Omeprazole gastro-resistant capsules (20 mg).",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Omeprazole 20mg capsules, 28 count, gastro-resistant, Bristol-Myers Squibb brand, pink box, on patterned fabric background.",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 11.4
+    },
+    {
+      "image": "VizWiz_val_00000624.jpg",
+      "question": "What is in this picture?",
+      "answer_type": "other",
+      "crowd": [
+        "woman sitting hands crossed",
+        "2 people cropped",
+        "person",
+        "people",
+        "woman",
+        "person sitting on chair",
+        "woman",
+        "person sitting in chair",
+        "person sitting on chair",
+        "woman"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "woman sitting on chair",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A person sitting on a couch",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Person sitting indoors with a phone in hand",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "woman sitting on chair",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 14,
+      "failed": {},
+      "seconds": 14.9
+    },
+    {
+      "image": "VizWiz_val_00001602.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "bologna",
+        "packaged lunch meat",
+        "bottom food container",
+        "unanswerable",
+        "bologna",
+        "unanswerable",
+        "sandwich meat",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A blurry yellow object",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A close-up of a food item, likely a slice of orange or orange peel",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A close-up of a food item, likely a slice of orange or orange peel",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 14.1
+    },
+    {
+      "image": "VizWiz_val_00003582.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "can",
+        "split pea soup",
+        "split pea soup",
+        "split pea soup",
+        "split pea soup",
+        "soup",
+        "can split pea soup",
+        "split pea soup",
+        "soup"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "can of creamy split pea soup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A can of soup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Canned split pea soup",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "can of creamy split pea soup",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 13.1
+    },
+    {
+      "image": "VizWiz_val_00003610.jpg",
+      "question": "What is this item?",
+      "answer_type": "other",
+      "crowd": [
+        "craft",
+        "unanswerable",
+        "glow in dark toy",
+        "craft kit",
+        "craft kit",
+        "unanswerable",
+        "toy",
+        "beads",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Glow-in-the-dark craft kit",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A children's toy box",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Plastic toy sorting game (e.g., 'Flip & Fit') with small colored pieces",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Glow-in-the-dark craft kit",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 14.0
+    },
+    {
+      "image": "VizWiz_val_00002291.jpg",
+      "question": "What color is this shirt?",
+      "answer_type": "other",
+      "crowd": [
+        "red",
+        "red",
+        "blue",
+        "red",
+        "red",
+        "red",
+        "red",
+        "ergtetr",
+        "red",
+        "red"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Blue and red",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The shirt appears to be greyish-blue.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "The shirt appears to be greyish-blue.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {
+        "qwen3-vl:4b-instruct": "qwen3-vl:4b-instruct did not return valid JSON (Unterminated string starting at: line 1 column 12 (char 11))"
+      },
+      "seconds": 54.4
+    },
+    {
+      "image": "VizWiz_val_00001168.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "coke bottle cap",
+        "shirt pin",
+        "coca cola coin",
+        "bottle cap",
+        "coca cola pin",
+        "bottle cap",
+        "coca cola 1940s metal disk",
+        "cocoa cola 1940 coin",
+        "coca cola metal cap",
+        "not clare"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Coca-Cola button",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A small vintage Coca-Cola tag",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A vintage coin or token from the 1960s",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A small vintage Coca-Cola tag",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 11.1
+    },
+    {
+      "image": "VizWiz_val_00002629.jpg",
+      "question": "What is the object in this image?",
+      "answer_type": "other",
+      "crowd": [
+        "monitor",
+        "tv",
+        "several objects",
+        "rug tv",
+        "unanswerable",
+        "tv",
+        "rug",
+        "carpet",
+        "rug",
+        "carpet"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "room with clutter and a TV",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A room with a television and rug",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "bedroom workspace",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "room with clutter and a TV",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 12,
+      "failed": {},
+      "seconds": 13.9
+    },
+    {
+      "image": "VizWiz_val_00001892.jpg",
+      "question": "What color is this shirt, please?",
+      "answer_type": "other",
+      "crowd": [
+        "blue",
+        "blue",
+        "blue",
+        "aqua blue",
+        "blue",
+        "blue",
+        "blue",
+        "teal",
+        "aqua",
+        "blue"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "blue shirt",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Blue",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "light blue/greyish teal",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Blue",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 11.3
+    },
+    {
+      "image": "VizWiz_val_00003543.jpg",
+      "question": "What color are these?",
+      "answer_type": "other",
+      "crowd": [
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "black and clear frames, on a light surface, with a ruler behind them, against a white wall.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Black and clear",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The glasses appear to be black and silver/grey.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Black and clear",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 11.8
+    },
+    {
+      "image": "VizWiz_val_00000140.jpg",
+      "question": "Can you please describe to me what's on the page and its orientation? Thank you",
+      "answer_type": "other",
+      "crowd": [
+        "sideways car sales ad",
+        "car dealership advertisement",
+        "sales ad landscape",
+        "newspaper advertisement for automobiles",
+        "advertisement sideways",
+        "cars for sale",
+        "sideways ad page",
+        "car dealership advertisements sideways",
+        "car sales ad rotated right 90 degrees",
+        "car dealership ad"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "The page is oriented vertically.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "The page is horizontally oriented.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "The page is oriented vertically.",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4234 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 10.1
+    },
+    {
+      "image": "VizWiz_val_00001802.jpg",
+      "question": "What is the product?",
+      "answer_type": "other",
+      "crowd": [
+        "neoneosporin",
+        "bug spray",
+        "unanswerable",
+        "neoneosporin",
+        "unanswerable",
+        "unknown",
+        "neoneosporin",
+        "spray",
+        "unanswerable",
+        "neosporin"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Sportsrin topical cream",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Anti-chafing balm (likely containing zinc oxide)",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Sportsrin topical cream",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {
+        "qwen3-vl:4b-instruct": "qwen3-vl:4b-instruct did not return valid JSON (Unterminated string starting at: line 1 column 12 (char 11))"
+      },
+      "seconds": 55.0
+    },
+    {
+      "image": "VizWiz_val_00001743.jpg",
+      "question": "What kind of lighter is this?",
+      "answer_type": "other",
+      "crowd": [
+        "gun",
+        "butane",
+        "unanswerable",
+        "world gun",
+        "unanswerable",
+        "world gun",
+        "gun",
+        "world gun",
+        "looks like gun",
+        "world gun"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "gun-shaped lighter",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "This is not a lighter; it is a firearm.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "gun-shaped lighter",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 12.7
+    },
+    {
+      "image": "VizWiz_val_00004059.jpg",
+      "question": "How clear is this picture?",
+      "answer_type": "other",
+      "crowd": [
+        "clear belmont park",
+        "very clear",
+        "pretty clear",
+        "clear",
+        "somewhat",
+        "knowles park",
+        "clear",
+        "clear",
+        "very",
+        "very"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "clear",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "The picture is somewhat clear.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Moderately clear enough to read details but slightly blurry at edges",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "clear",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 11.1
+    },
+    {
+      "image": "VizWiz_val_00003516.jpg",
+      "question": "Hi, what's outside the window? ",
+      "answer_type": "other",
+      "crowd": [
+        "railing",
+        "railing",
+        "fenced off patio",
+        "building",
+        "bushes",
+        "trees",
+        "building",
+        "deck",
+        "trees building",
+        "trees"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A mix of buildings and trees",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Urban rooftop garden area with greenery and buildings",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A mix of buildings and trees",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4224 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 7.4
+    },
+    {
+      "image": "VizWiz_val_00000807.jpg",
+      "question": "What this?",
+      "answer_type": "other",
+      "crowd": [
+        "pc screen",
+        "you cam window on screen",
+        "computer screen",
+        "laptop webcam on",
+        "you can settings window",
+        "computer screen",
+        "you cam",
+        "computer screen",
+        "youcam",
+        "web cam"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "computer screen showing Skype with YouCam app",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A computer screen showing a video chat interface.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "Computer screen with video call software",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Computer screen with video call software",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 17.6
+    },
+    {
+      "image": "VizWiz_val_00004243.jpg",
+      "question": "What kind of pop is this?",
+      "answer_type": "other",
+      "crowd": [
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coke",
+        "coca cola",
+        "coca cola",
+        "coke",
+        "coke",
+        "coke"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Coca-Cola",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Coca-Cola",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "This appears to be Coca-Cola.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Coca-Cola",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 9.0
+    },
+    {
+      "image": "VizWiz_val_00000766.jpg",
+      "question": "I need to know specifically what is written across the screen on this computer, please.",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "desktop",
+        "window icon icons to left screen",
+        "nothing",
+        "unanswerable",
+        "unanswerable",
+        "nothing",
+        "windows logo",
+        "unanswerable",
+        "nothing written just windows main menu program icons"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Cannot provide exact text due to blurriness.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 10.9
+    },
+    {
+      "image": "VizWiz_val_00002115.jpg",
+      "question": "What does this say?",
+      "answer_type": "other",
+      "crowd": [
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin20",
+        "ckin2u"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "CK IN2U",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "CKIN2U",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The text says 'AZNIKO' in yellow.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "CK IN2U",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 10.4
+    },
+    {
+      "image": "VizWiz_val_00003192.jpg",
+      "question": "What color are these pants?",
+      "answer_type": "other",
+      "crowd": [
+        "dark grey",
+        "grey",
+        "brown",
+        "black",
+        "brown",
+        "brown",
+        "brown",
+        "grey",
+        "brown",
+        "brown grey"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Dark brown",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "The pants appear to be a dark, olive-brown/greenish color.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Dark brown",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4222 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 6.5
+    },
+    {
+      "image": "VizWiz_val_00001772.jpg",
+      "question": "What is in this box?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "hamms special light beer",
+        "beer",
+        "unanswerable",
+        "unanswerable",
+        "beer",
+        "beer",
+        "beer",
+        "beer",
+        "special light"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Beer box",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A framed sign",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "A box with a scenic nature-themed design",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A box with a scenic nature-themed design",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 13.2
+    },
+    {
+      "image": "VizWiz_val_00003460.jpg",
+      "question": "What is what is this",
+      "answer_type": "other",
+      "crowd": [
+        "music instruments",
+        "keyboard",
+        "piano keyboard",
+        "keyboard",
+        "piano keyboard",
+        "electric piano keyboard",
+        "music keyboard",
+        "keyboard",
+        "keyboard",
+        "keyboard"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "keyboard under desk",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A keyboard and cables",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "A damaged piano keyboard section",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "A keyboard and cables",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 11.4
+    },
+    {
+      "image": "VizWiz_val_00003550.jpg",
+      "question": "Does this sweater and this shirt go together?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "abstain",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 10.8
+    },
+    {
+      "image": "VizWiz_val_00004271.jpg",
+      "question": "What does this screen say?",
+      "answer_type": "other",
+      "crowd": [
+        "preview this may take awhile your pc will reset",
+        "preview this may take while your pc will restart 45% complete",
+        "45% complete",
+        "45% complete",
+        "this might take while your pc will reset 45% complete",
+        "45% complete",
+        "45% complete",
+        "this might take while your pc will restart",
+        "preview 45% complete",
+        "preview this might take awhile your pc will restart 45% complete"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Preview, This might take a while. Your PC will res, 45% complete",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "ministral-3:3b": {
+          "answer": "This shows a progress indicator with text.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Preview, This might take a while. Your PC will res, 45% complete",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 11.5
+    },
+    {
+      "image": "VizWiz_val_00000034.jpg",
+      "question": "How big do you think my TV is? Thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "32 inches",
+        "27 inches",
+        "unanswerable",
+        "22 inch",
+        "20 inch",
+        "30 inches",
+        "15 inches",
+        "32 inch",
+        "30 inch"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "ministral-3:3b": {
+          "answer": "Approximately 24–26 inches (TV size estimate)",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Approximately 24–26 inches (TV size estimate)",
+      "agreement": "single",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 14.2
+    }
+  ],
+  "meta": {
+    "val_questions": 4319,
+    "answerable": 2934,
+    "val_zip_sha256": "7cc829c1fbcbc9ffd0a895f9df33d4b365557289c037a578ea9f812e41422469"
+  },
+  "models": [
+    "qwen3-vl:4b-instruct",
+    "gemma4:e4b",
+    "ministral-3:3b"
+  ],
+  "ollama": "v0.40.13",
+  "gpu": "NVIDIA A10"
+}
