@@ -21,7 +21,8 @@ from fake_ollama import PNG, FakeOllama  # noqa: E402
 from crosscheck import cli, server  # noqa: E402
 from crosscheck.images import ImageError, check_image  # noqa: E402
 from crosscheck.ollama import Ollama  # noqa: E402
-from crosscheck.pipeline import run, same_fact  # noqa: E402
+from crosscheck.pipeline import answer_agreement, answer_consensus, is_abstention, run, same_fact  # noqa: E402
+import fake_ollama  # noqa: E402
 
 
 class SameFactTests(unittest.TestCase):
@@ -184,6 +185,72 @@ class CliTests(unittest.TestCase):
             text = out.getvalue()
             self.assertIn("Where the models disagree", text)
             self.assertIn("a: stated it; b: no", text)
+
+
+class AnswerTests(unittest.TestCase):
+    def test_consensus(self):
+        self.assertEqual(answer_consensus({"a": "Red", "b": "red.", "c": "red"}), ("Red", "all"))
+        self.assertEqual(answer_consensus({"a": "200 mg", "b": "400 mg", "c": "200 mg"}), ("200 mg", "most"))
+        self.assertEqual(answer_consensus({"a": "a cat", "b": "a dog"})[1], "none")
+        self.assertEqual(answer_consensus({"a": "It is a can of tomatoes", "b": "tomatoes, canned"})[1], "all")
+        self.assertEqual(answer_consensus({"a": "Expires 2026", "b": "Expires 2027"})[1], "none")
+        self.assertEqual(answer_consensus({"a": "", "b": ""}), (None, None))
+        self.assertEqual(answer_consensus({"a": "blue"}), ("blue", None))
+
+    def test_disagreeing_answers_lead_the_summary(self):
+        with FakeOllama() as fake:
+            d = run(Ollama(fake.url), PNG, ["a", "b"], question="What is the dose?").to_dict()
+            self.assertEqual(d["answer_agreement"], "none")
+            self.assertTrue(d["spoken"].startswith("The models give different answers: a says Ibuprofen 200 mg; "
+                                                   "b says Ibuprofen 400 mg."), d["spoken"])
+            self.assertEqual(d["answers"], {"a": "Ibuprofen 200 mg", "b": "Ibuprofen 400 mg"})
+
+    def test_majority_answer(self):
+        with FakeOllama() as fake:
+            d = run(Ollama(fake.url), PNG, ["a", "b", "c"], question="What is the dose?").to_dict()
+            self.assertEqual(d["answer_agreement"], "most")
+            self.assertTrue(d["spoken"].startswith("Probably: Ibuprofen 200 mg."), d["spoken"])
+
+    def test_no_question_no_answer(self):
+        with FakeOllama() as fake:
+            d = run(Ollama(fake.url), PNG, ["a", "b"]).to_dict()
+            self.assertIsNone(d["answer"])
+            self.assertEqual(d["answers"], {})
+
+
+class SemanticAgreementTests(unittest.TestCase):
+    def setUp(self):
+        self.saved = dict(fake_ollama.ANSWERS)
+
+    def tearDown(self):
+        fake_ollama.ANSWERS.clear()
+        fake_ollama.ANSWERS.update(self.saved)
+
+    def test_rules(self):
+        self.assertEqual(answer_agreement({"a": "x", "b": "cannot tell"}, {}), ("x", "single"))
+        self.assertEqual(answer_agreement({"a": "Cannot tell", "b": "I'm sorry, I can't see it"}, {}), ("cannot tell", "abstain"))
+        votes = {"a": {"b": "yes"}, "b": {"a": "yes"}}
+        self.assertEqual(answer_agreement({"a": "Blue and grey", "b": "a blue-gray backpack"}, votes)[1], "all")
+        votes = {"a": {"b": "no"}, "b": {"a": "no"}}
+        self.assertEqual(answer_agreement({"a": "cat", "b": "dog"}, votes)[1], "none")
+        self.assertTrue(is_abstention("The image is too small and blurry to provide a description."))
+        self.assertFalse(is_abstention("Doritos"))
+
+    def test_different_words_same_answer_counts_as_agreement(self):
+        fake_ollama.ANSWERS.update({"a": "Blue and grey", "b": "a blue-gray backpack"})
+        with FakeOllama() as fake:
+            d = run(Ollama(fake.url), PNG, ["a", "b"], question="What colour is my bag?").to_dict()
+            self.assertEqual(d["answer_agreement"], "all", d["spoken"])
+            self.assertTrue(d["spoken"].startswith("Answer: Blue and grey. All 2 models give this answer."))
+            judged = [c for c in fake.state.calls if "the answer is:" in c["messages"][0]["content"]]
+            self.assertEqual(len(judged), 2)  # each model judged the other's answer
+
+    def test_one_model_abstaining_is_not_disagreement(self):
+        fake_ollama.ANSWERS.update({"a": "cannot tell", "b": "Ibuprofen 400 mg"})
+        with FakeOllama() as fake:
+            d = run(Ollama(fake.url), PNG, ["a", "b"], question="What is the dose?").to_dict()
+            self.assertEqual(d["answer_agreement"], "single")
+            self.assertIn("Only one model could answer", d["spoken"])
 
 
 if __name__ == "__main__":

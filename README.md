@@ -26,7 +26,9 @@ free, offline, and the photo never leaves your computer.
 2. Facts that say the same thing are merged. Facts that differ in a **number or quoted text**
    ("Ibuprofen 200 mg" against "400 mg") are kept apart, because that is where errors hide.
 3. Every model looks at the photo again and judges each fact the others stated: yes, no, or unsure.
-4. You hear a short summary first, for example:
+4. If you asked a question, each model also answers it in a few words, and the models judge each
+   other's answers the same way. "Cannot tell" counts as not answering, not as disagreeing.
+5. You hear a short summary first, for example:
 
    > A pill bottle on a wooden table. The 3 models agree on 6 of 9 details. They disagree about:
    > The label says "Ibuprofen 200 mg"; The label says "Ibuprofen 400 mg".
@@ -45,7 +47,7 @@ confirm with a person or another trusted source. Crosscheck never says "verified
    ```sh
    ollama pull qwen3-vl:4b-instruct
    ollama pull gemma4:e4b
-   ollama pull granite3.2-vision:2b
+   ollama pull ministral-3:3b
    ```
 
 2. Install and start Crosscheck (Python 3.10+, no other dependencies):
@@ -72,6 +74,37 @@ about 30–90 seconds per photo while Ollama swaps the models in and out; a CPU 
 The web app shrinks the photo in your browser before sending it, which also removes metadata
 such as GPS location.
 
+## Evaluation
+
+`eval/modal_eval.py` runs Crosscheck on 100 photos taken by blind people, from the VizWiz-VQA
+validation set (CC BY 4.0), each with the question its photographer asked and ten crowd answers.
+`eval/rescore.py` then grades every answer against the crowd answers with a separate text model
+(Qwen3-8B), because word matching misjudges free-form answers. Results on one NVIDIA L4, all three
+default models loaded (`eval/results/vizwiz-judged.json`):
+
+| | Result |
+|---|---|
+| Correct, single model (Qwen3-VL 4B / Gemma 4 E4B / Ministral 3 3B) | 56% / 55% / 45% |
+| **Correct, Crosscheck's combined answer** | **63%** |
+| Wrong when the models disagree | 45% |
+| Wrong when all models agree | 33% |
+| Wrong answers that were flagged as a disagreement | 38% |
+| Time per photo (median / 90th percentile) | 13 s / 42 s |
+
+What this means:
+
+- Combining three small models gives a better answer than any one of them.
+- Disagreement is a real warning sign (errors are more common), but **agreement does not mean
+  the answer is right**: a third of agreed answers were still wrong. VizWiz photos are often
+  blurry, dark or badly framed, which is exactly when blind users most need help and when small
+  models are weakest.
+- An earlier version compared answers by their words and used Granite 3.2 Vision, which refused
+  38% of photos; it flagged almost everything and told users nothing. Its results are kept in
+  `eval/results/vizwiz-v1-granite-lexical.json`.
+
+The ASSETS '25 study used large cloud models; we have not yet measured how much bigger local
+models (for example on a 24 GB GPU) improve these numbers.
+
 ## Privacy and security
 
 - Runs on 127.0.0.1 only. Photos stay in memory and go only to your Ollama. Nothing is logged.
@@ -85,9 +118,8 @@ such as GPS location.
   and is planned for v0.2.
 - Merging facts across models uses word overlap, so two phrasings of one fact are sometimes
   listed separately; each still gets judged.
-- Small local models are weaker than the cloud models in the study. We are measuring how well
-  their disagreement predicts real errors on photos taken by blind people (VizWiz), and will
-  publish the results and timings here.
+- Small local models are weaker than the cloud models in the study, and their agreement is a
+  weaker signal (see Evaluation). Treat "the models agree" as encouraging, never as proof.
 
 Feedback from blind and low-vision users matters most: please open an issue or email
 admin@rushlabs.ai.

@@ -1,0 +1,160 @@
+{
+  "summary": {
+    "questions": 3,
+    "per_model_accuracy": {
+      "qwen3-vl:4b-instruct": 0.333,
+      "gemma4:e4b": 0.333,
+      "granite3.2-vision:2b": 0.333
+    },
+    "per_model_vqa_accuracy": {
+      "qwen3-vl:4b-instruct": 0.0,
+      "gemma4:e4b": 0.111,
+      "granite3.2-vision:2b": 0.111
+    },
+    "consensus_accuracy": 0.333,
+    "all_agree_share": 0.333,
+    "accuracy_when_all_agree": 1.0,
+    "accuracy_when_not_all_agree": 0.0,
+    "wrong_answers_flagged": 1.0,
+    "flags_that_were_wrong": 1.0,
+    "seconds_per_photo_median": 13.8,
+    "seconds_per_photo_p90": 13.8
+  },
+  "rows": [
+    {
+      "image": "VizWiz_val_00004210.jpg",
+      "question": "What about the color cloth. Tell me about the color cloth. ",
+      "answer_type": "other",
+      "crowd": [
+        "green white",
+        "white dark green print",
+        "white green",
+        "white green",
+        "pink green",
+        "cloth white cream green on",
+        "pink black",
+        "green white",
+        "purple black tie dye",
+        "white green splatters"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "It is a light purple and green patterned fabric.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a textured surface with a mix of purple and green colors. The texture appears to be soft and possibly made of a fabric or cloth. There is no clear indication of any specific object or subject within the image.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 211.2
+    },
+    {
+      "image": "VizWiz_val_00002216.jpg",
+      "question": "Is there any text on this side of the paper please?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "no",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "no",
+        "no",
+        "unanswerable",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description as the image is not visible to me.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 11.4
+    },
+    {
+      "image": "VizWiz_val_00001920.jpg",
+      "question": "What kind of chips are these?",
+      "answer_type": "other",
+      "crowd": [
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "nacho cheese",
+        "doritos",
+        "doritos",
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "dorito nacho cheese",
+        "nacho cheese doritos"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Doritos Nacho Cheese chips",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Nacho Cheese",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "Nacho Cheese",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        }
+      },
+      "consensus": "Doritos Nacho Cheese chips",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 13.8
+    }
+  ],
+  "meta": {
+    "val_questions": 4319,
+    "answerable": 2934,
+    "val_zip_sha256": "7cc829c1fbcbc9ffd0a895f9df33d4b365557289c037a578ea9f812e41422469"
+  },
+  "models": [
+    "qwen3-vl:4b-instruct",
+    "gemma4:e4b",
+    "granite3.2-vision:2b"
+  ],
+  "ollama": "v0.40.13",
+  "gpu": "NVIDIA L4"
+}

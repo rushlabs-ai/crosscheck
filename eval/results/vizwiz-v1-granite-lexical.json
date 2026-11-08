@@ -1,0 +1,4218 @@
+{
+  "summary": {
+    "questions": 100,
+    "abstained": 0.27,
+    "per_model_accuracy": {
+      "qwen3-vl:4b-instruct": 0.43,
+      "gemma4:e4b": 0.45,
+      "granite3.2-vision:2b": 0.33
+    },
+    "per_model_vqa_accuracy": {
+      "qwen3-vl:4b-instruct": 0.047,
+      "gemma4:e4b": 0.137,
+      "granite3.2-vision:2b": 0.023
+    },
+    "consensus_accuracy_when_answering": 0.63,
+    "all_agree_share_of_answers": 0.041,
+    "wrong_rate_when_all_agree": 0.333,
+    "wrong_rate_when_models_disagree": 0.371,
+    "wrong_answers_that_were_flagged": 0.963,
+    "counts": {
+      "answered": 73,
+      "all_agree": 3,
+      "disagree": 70,
+      "wrong": 27
+    },
+    "seconds_per_photo_median": 19.7,
+    "seconds_per_photo_p90": 89.0
+  },
+  "rows": [
+    {
+      "image": "VizWiz_val_00004210.jpg",
+      "question": "What about the color cloth. Tell me about the color cloth. ",
+      "answer_type": "other",
+      "crowd": [
+        "green white",
+        "white dark green print",
+        "white green",
+        "white green",
+        "pink green",
+        "cloth white cream green on",
+        "pink black",
+        "green white",
+        "purple black tie dye",
+        "white green splatters"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "It is a light purple and green patterned fabric.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a textured surface with a mix of purple and green colors. The texture appears to be soft and possibly made of a fabric or cloth. There is no clear indication of any specific object or subject within the image.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 213.4
+    },
+    {
+      "image": "VizWiz_val_00002216.jpg",
+      "question": "Is there any text on this side of the paper please?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "no",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "no",
+        "no",
+        "unanswerable",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description as the image is not visible to me.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 11.2
+    },
+    {
+      "image": "VizWiz_val_00001920.jpg",
+      "question": "What kind of chips are these?",
+      "answer_type": "other",
+      "crowd": [
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "nacho cheese",
+        "doritos",
+        "doritos",
+        "doritos nacho cheese",
+        "doritos nacho cheese",
+        "dorito nacho cheese",
+        "nacho cheese doritos"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Doritos Nacho Cheese chips",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Nacho Cheese",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "Nacho Cheese",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        }
+      },
+      "consensus": "Doritos Nacho Cheese chips",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 12.3
+    },
+    {
+      "image": "VizWiz_val_00001479.jpg",
+      "question": "Can you tell me the content of this notice?",
+      "answer_type": "other",
+      "crowd": [
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking",
+        "no smoking"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "No smoking and mind your head notices",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who can't see it. If you provide me with a detailed description of the image, I can help you understand how to describe it in a way that's accessible to someone who can't see it.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "No smoking and mind your head notices",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4226 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 16.2
+    },
+    {
+      "image": "VizWiz_val_00002025.jpg",
+      "question": "Is the dog lying on his bed?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "yes",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Yes",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "yes",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 10.6
+    },
+    {
+      "image": "VizWiz_val_00000546.jpg",
+      "question": "What is this? Apple is very easy to use once  you start using it. That's the thing, but you have to start using it. Yes. Its like anything, when someone first started using the computer they couldn't use it.",
+      "answer_type": "other",
+      "crowd": [
+        "service unavailable window in browser",
+        "computer",
+        "monitor",
+        "computer monitor",
+        "apple tv",
+        "unanswerable",
+        "internet explorer",
+        "unanswerable",
+        "computer",
+        "tab that says service unavailable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A computer monitor",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a computer screen with a blurred view of the content. It appears to be a webpage with a blue header and a white body, but the specific details are not clear due to the blurriness. The screen is on a desk with a keyboard and a mouse visible in the foreground. The overall lighting suggests an indoor setting with artificial lighting.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 19.7
+    },
+    {
+      "image": "VizWiz_val_00001149.jpg",
+      "question": "If there is any text on the screen, what does it say? Thanks.",
+      "answer_type": "other",
+      "crowd": [
+        "os x utilities",
+        "os x utilities",
+        "os x utilities",
+        "unanswerable",
+        "os x utilities",
+        "dsx utilities",
+        "os x utilities",
+        "computer utilities",
+        "os x utilities",
+        "osx utilities"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "OS X Utilities\nRestore From Time Machine Backup\nReinstall OS X\nGet Help Online\nDisk Utility\nContinue\n\nMain object: laptop screen showing OS X Utilities menu\nText: \"OS X Utilities\" and options listed\nColor: screen is dark grey with white text\nPosition: laptop on desk, near window with blinds\nOther: red-lidded jar to right, cables behind laptop\nSummary: A laptop displays the OS X Utilities menu with options for system recovery and help.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "OS X Utilities",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description for the image as I can't see it. However, I can help you understand how to describe an image for someone who can't see it. If you have a specific image you'd like me to describe, please provide it, and I'll be happy to assist you.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "OS X Utilities\nRestore From Time Machine Backup\nReinstall OS X\nGet Help Online\nDisk Utility\nContinue\n\nMain object: laptop screen showing OS X Utilities menu\nText: \"OS X Utilities\" and options listed\nColor: screen is dark grey with white text\nPosition: laptop on desk, near window with blinds\nOther: red-lidded jar to right, cables behind laptop\nSummary: A laptop displays the OS X Utilities menu with options for system recovery and help.",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 24.9
+    },
+    {
+      "image": "VizWiz_val_00004314.jpg",
+      "question": "what is this?",
+      "answer_type": "other",
+      "crowd": [
+        "salad dressing back side",
+        "dressing",
+        "salad dressing",
+        "salad dressing",
+        "balsamic salad dressing",
+        "salad dressing",
+        "unanswerable",
+        "salad dressing",
+        "salad dressing",
+        "salad dressing"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "bottle of salad dressing",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Two bottles of liquid",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a bottle with a label that is partially obscured. The label appears to be white with black text and images. The text on the label is not fully legible due to the blurriness of the image. The bottle seems to be a condiment or sauce, possibly a dressing or sauce, given the shape and design of the bottle. The label includes a picture of a person, which might be a brand logo or a product name. The background is blurred, making it difficult to identify any specific details about the setting or environment. The overall impression is that the image was taken in a casual setting, possibly at home or in a kitchen, where food items are commonly stored and used.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "bottle of salad dressing",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 24.4
+    },
+    {
+      "image": "VizWiz_val_00003106.jpg",
+      "question": "What color is my book bag?",
+      "answer_type": "other",
+      "crowd": [
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey off white",
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey",
+        "blue grey"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "blue and gray book bag",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Blue and grey",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "blue and gray book bag",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 18.9
+    },
+    {
+      "image": "VizWiz_val_00003545.jpg",
+      "question": "What color is this iPhone case?",
+      "answer_type": "other",
+      "crowd": [
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "case grey",
+        "black",
+        "black",
+        "dark grey",
+        "unanswerable"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Grey",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a phone case with a textured surface, predominantly in shades of black and gold. The case appears to be made of a material with a pattern that could be either fabric or a synthetic material. The text on the case is not clearly visible due to the angle and focus of the photograph.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Grey",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {
+        "qwen3-vl:4b-instruct": "qwen3-vl:4b-instruct did not return valid JSON (Unterminated string starting at: line 1 column 12 (char 11))"
+      },
+      "seconds": 90.7
+    },
+    {
+      "image": "VizWiz_val_00000847.jpg",
+      "question": "What does this say?",
+      "answer_type": "other",
+      "crowd": [
+        "icons",
+        "reaper quick time audacity other icons",
+        "computer menu",
+        "list programs quicktime thunderbird etc",
+        "unanswerable",
+        "unanswerable",
+        "icons on screen",
+        "thunderbird",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Desktop icons",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Various words and icons",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The photo is too blurry to provide a detailed description. It appears to be a close-up of a computer screen with various icons and text, but the specific details cannot be discerned.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Desktop icons",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 12.7
+    },
+    {
+      "image": "VizWiz_val_00002074.jpg",
+      "question": "What CD is this?",
+      "answer_type": "other",
+      "crowd": [
+        "blank",
+        "blank cd",
+        "maxwell",
+        "maxell cd r",
+        "blank",
+        "blank",
+        "blanket",
+        "blank",
+        "blank",
+        "maxell"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Maxell CD-R disc",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a CD with a red label and the text '2008' and 'Maxwell'. The CD is placed on a surface with a dark background and a red object in the foreground. The CD appears to be in good condition with no visible scratches or damage.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Maxell CD-R disc",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 38.1
+    },
+    {
+      "image": "VizWiz_val_00003929.jpg",
+      "question": "What order did the controls appear in Low-high warm or high-low warm?",
+      "answer_type": "other",
+      "crowd": [
+        "off low high warm",
+        "low",
+        "off low high warm",
+        "gfdg",
+        "low",
+        "off low high warm",
+        "low high warm",
+        "unanswerable",
+        "low high warm",
+        "low high warm"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Low, Off, High, Warm (clockwise from left)",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Low, High, Warm",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The photo does not show the controls in a specific order of low-high-low-high or high-low-low-high. The image is blurred and the controls are not clearly visible.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Low, Off, High, Warm (clockwise from left)",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 17.3
+    },
+    {
+      "image": "VizWiz_val_00004238.jpg",
+      "question": "What's this?",
+      "answer_type": "other",
+      "crowd": [
+        "keyboard buttons",
+        "keyboard",
+        "computer keyboard",
+        "keyboard",
+        "keyboard",
+        "keys",
+        "keyboard",
+        "keyboard",
+        "keyboard",
+        "keyboard"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "keyboard keys",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A keyboard",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as it is not visible to me. Please upload the image you would like me to describe.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "keyboard keys",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 57.8
+    },
+    {
+      "image": "VizWiz_val_00002671.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "battery bank",
+        "portable charger",
+        "cell phone",
+        "mouse",
+        "phone",
+        "either external drive power bank",
+        "unanswerable",
+        "phone",
+        "mouse",
+        "cell phone"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "mobile hotspot device",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A mobile hotspot device",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "unanswerable",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        }
+      },
+      "consensus": "mobile hotspot device",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 12.4
+    },
+    {
+      "image": "VizWiz_val_00002488.jpg",
+      "question": "Can you tell me what the conventional oven preheat temperature is and for how many minutes?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "unanswerable",
+        "375 degrees 20 25 minutes",
+        "375 20 to 25 minutes",
+        "375 for 20 to 25 minutes",
+        "375 for 20 to 25 minutes",
+        "unanswerable",
+        "375",
+        "375 degrees for 20 25 minutes",
+        "375 20 25"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "375°F for 20 to 25 minutes",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The conventional oven preheat temperature is 350°F (175°C) for 10 minutes.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 0,
+      "failed": {
+        "granite3.2-vision:2b": "while checking: granite3.2-vision:2b did not return valid JSON (Unterminated string starting at: line 1 column 22192 (char 22191))"
+      },
+      "seconds": 282.4
+    },
+    {
+      "image": "VizWiz_val_00002296.jpg",
+      "question": "Can you please tell me what kind of tea this is?",
+      "answer_type": "other",
+      "crowd": [
+        "tazo earl grey",
+        "earl grey",
+        "tazo earl grey",
+        "earl grey",
+        "earl grey",
+        "earl grey",
+        "earl grey",
+        "earl grey",
+        "tazo earl grey",
+        "tazo earl grey black tea"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Earl Grey tea packet",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Earl Grey",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a tea bag with the text 'Earl Grey' visible. The tea bag appears to be a black tea variety, as indicated by the text on the bag. The background is blurred, making it difficult to discern any additional details about the setting or context in which the tea bag is placed.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Earl Grey tea packet",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 18.9
+    },
+    {
+      "image": "VizWiz_val_00001526.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "pears",
+        "can",
+        "pears",
+        "pears",
+        "pears",
+        "unanswerable",
+        "can food",
+        "can",
+        "canned pears",
+        "nutritional"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "can of pears in water",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A nutrition label on a food container",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a nutritional label on a can, which includes information about the product's ingredients, nutritional content, and other details. The label is predominantly white with blue text and graphics. The text on the label includes the brand name, nutritional facts, and ingredients. The image is taken from a low angle, focusing on the label and making the background blurry.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "can of pears in water",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 43.5
+    },
+    {
+      "image": "VizWiz_val_00001722.jpg",
+      "question": "What flavor are these pringles?",
+      "answer_type": "other",
+      "crowd": [
+        "thai sweet chili",
+        "chai sweet chilu",
+        "chili",
+        "thai sweet chili",
+        "thai sweet chili",
+        "thai sweet chili",
+        "thai sweet chili",
+        "prngles flavor",
+        "thai sweet chili",
+        "thai sweet chilli"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Thai Sweet Chili",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Thai Sweet Chilli",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a can of Pringles Thai Sweet Chili. The can is predominantly red with a white background and features the Pringles logo at the top. The text 'Pringles' is prominently displayed in large, bold letters, followed by 'Thai Sweet Chili' in smaller text. The can also shows an image of a bowl of chili, which is a common representation of the product. The background is blurred, making it difficult to discern any additional details.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Thai Sweet Chili",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 40.3
+    },
+    {
+      "image": "VizWiz_val_00001224.jpg",
+      "question": "Can you tell me what's in this jar please?  ",
+      "answer_type": "other",
+      "crowd": [
+        "mayonnaise",
+        "salad dressing",
+        "mayonnaise",
+        "salad dressing",
+        "dressing",
+        "dressing",
+        "salad dressing",
+        "salad dressing",
+        "dressing",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "mayonnaise jar",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't see the photo you're referring to. Please provide a description or upload the image again.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "mayonnaise jar",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 16.7
+    },
+    {
+      "image": "VizWiz_val_00000037.jpg",
+      "question": "Hi, I just wanted to confirm that these are indeed pork chops. Any other information that is clear would be appreciated. Thank you.",
+      "answer_type": "yes/no",
+      "crowd": [
+        "yes",
+        "yes",
+        "yes kirkland signature pork chops",
+        "yes porkchops",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes loin chops",
+        "yes"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Yes, pork chops.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Yes, the label mentions 'CHOPS BONLESS'",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "Yes, the photo shows pork chops. The text on the receipt is partially obscured, but it appears to include the word 'pork' and possibly other details about the purchase.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Yes, pork chops.",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 26.3
+    },
+    {
+      "image": "VizWiz_val_00002891.jpg",
+      "question": "What kind of dog is this?",
+      "answer_type": "other",
+      "crowd": [
+        "dalmation",
+        "dalmation",
+        "dalmation",
+        "dalmatian",
+        "dalmatian",
+        "dalmation",
+        "puppy",
+        "dalmatian",
+        "dalmatian",
+        "dalmation"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Dalmatian dog on couch",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Dalmatian",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The dog in the photo is a Dalmatian, identifiable by its distinctive black and white spotted coat. The dog appears to be lying down on a cushioned surface, possibly a sofa or bed, with a relaxed posture. The dog's ears are perked up, suggesting attentiveness or interest in something outside the frame. The photo is taken indoors, as indicated by the soft lighting and the presence of a cushion. The dog's coat is well-groomed, and it has a calm demeanor. The image does not provide any additional context or background story, but the dog's breed and the setting suggest a domestic environment.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Dalmatian dog on couch",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 38.6
+    },
+    {
+      "image": "VizWiz_val_00000905.jpg",
+      "question": "Can you tell me what this is?",
+      "answer_type": "other",
+      "crowd": [
+        "articles for blind",
+        "cd",
+        "reverse cd",
+        "articles for blind disk",
+        "cd",
+        "disk",
+        "book on cd",
+        "cd",
+        "cd articles for blind",
+        "spear by james herbert dvd"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "CD for blind people",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "It is a CD case for an audiobook.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a CD with text and a barcode. The text includes the words 'Articles for the Blind' and 'Return Address on Reverse'. The barcode is visible at the bottom of the CD. The CD appears to be a part of a collection or package, possibly related to a charitable cause or organization.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "CD for blind people",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 42.8
+    },
+    {
+      "image": "VizWiz_val_00002801.jpg",
+      "question": "What is the color of this blouse?",
+      "answer_type": "other",
+      "crowd": [
+        "blue",
+        "blue",
+        "unanswerable",
+        "blue",
+        "blue",
+        "blue",
+        "unanswerable",
+        "blue",
+        "blue",
+        "blue"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The blouse in the photo is blue.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 18.7
+    },
+    {
+      "image": "VizWiz_val_00001544.jpg",
+      "question": "Hi, can you please tell me what flavor this is?  ",
+      "answer_type": "other",
+      "crowd": [
+        "creamy chicken",
+        "unanswerable",
+        "cream carbon",
+        "no",
+        "unanswerable",
+        "no",
+        "creamy carbonara",
+        "unanswerable",
+        "unanswerable",
+        "cream carbonara"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who is blind. You can tell them about the main object or scene, any text you can read, and the colors, positions, and quantities of objects. If something is unclear, blurry, or cut off, you can describe it in a way that conveys its presence without guessing.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 16.8
+    },
+    {
+      "image": "VizWiz_val_00003257.jpg",
+      "question": "Can you tell me what colors are on my shirt?",
+      "answer_type": "other",
+      "crowd": [
+        "grey black white",
+        "white light grey dark grey black",
+        "striped light grey dark grey white black",
+        "dark grey light grey white",
+        "grey black white stripes",
+        "grey black white",
+        "black white grey",
+        "yes i can will i no",
+        "grey",
+        "light medium dark grey white black"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "striped shirt",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Grey, white, and black",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who can't see it. If you can provide me with a detailed description of the image, I can help you understand how to describe it in a way that's accessible to someone who can't see it.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "striped shirt",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {
+        "granite3.2-vision:2b": "while checking: granite3.2-vision:2b did not return valid JSON (Expecting property name enclosed in double quotes: line 2076 column 23 (char 25427))"
+      },
+      "seconds": 241.2
+    },
+    {
+      "image": "VizWiz_val_00000047.jpg",
+      "question": "what is this we taking a picture of?",
+      "answer_type": "other",
+      "crowd": [
+        "boobs",
+        "unanswerable",
+        "boobs",
+        "chest",
+        "fingers floral fabric part green shirt button pocket",
+        "chest",
+        "clothing",
+        "cleavage",
+        "shirts",
+        "shirt"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "person's torso with clothing",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A person's torso and clothing",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who can't see it. Please provide me with a detailed description of the image, including the main subjects, colors, and any other notable features.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "person's torso with clothing",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 23.1
+    },
+    {
+      "image": "VizWiz_val_00000370.jpg",
+      "question": "Could you tell me if I need to hit enter or can you actually tell if I need to do something else?",
+      "answer_type": "other",
+      "crowd": [
+        "yes accept terms",
+        "probably hit enter",
+        "you must agree license terms",
+        "click on accept license terms",
+        "check check box",
+        "click accept license terms",
+        "click on clear box",
+        "click left mouse key then enter",
+        "accept microsoft terms",
+        "accept terms"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I accept the license terms (required to use Windows)",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 42.2
+    },
+    {
+      "image": "VizWiz_val_00000195.jpg",
+      "question": "What does the screen on my TV say?",
+      "answer_type": "other",
+      "crowd": [
+        "starz encore call us at",
+        "starz",
+        "starz",
+        "unanswerable",
+        "call number to order premium channels",
+        "starz",
+        "starz encore",
+        "unanswerable",
+        "ad for starz premium",
+        "starz channels offer"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "TV screen showing Starz premium offer.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Starz and promotional text",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The text on the screen is not clear due to the image's low resolution and blurriness. However, it appears to be a promotional message for a service, possibly related to a movie or entertainment offer, as indicated by the words 'Call us at 1-800-333-DISC' and 'other premium movie offer to entertain'. The rest of the text is obscured and cannot be accurately transcribed.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "TV screen showing Starz premium offer.",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 35.1
+    },
+    {
+      "image": "VizWiz_val_00002460.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "mtn dew bottle",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mountain dew",
+        "mt dew"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "green soda bottle",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A green bottle of soda",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a green bottle with a label that reads '290' and '20 fl oz (600 ml)'. The bottle appears to be filled with a green liquid, possibly a sports drink or a similar beverage. The label also includes some text and graphics, but the details are not clear due to the image's low resolution and lighting conditions.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "green soda bottle",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 14.6
+    },
+    {
+      "image": "VizWiz_val_00000555.jpg",
+      "question": "Can you tell me what the screen says? The screen capture security code please.",
+      "answer_type": "other",
+      "crowd": [
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno",
+        "nikeno"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The security code is 'nikeno'.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 13.9
+    },
+    {
+      "image": "VizWiz_val_00002594.jpg",
+      "question": "how many nachos over to the left and or right is the setting bulky?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "1 notch to right",
+        "1 notch to right",
+        "unanswerable",
+        "unanswerable",
+        "1 notch to right",
+        "1 right",
+        "1 notch right",
+        "no nachos visible setting normal",
+        "1 right"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a washing machine control panel with various buttons and labels. The main button labeled 'TumbleFresh' is prominently displayed, indicating the tumble drying function. There are also buttons for 'Normal', 'Heavy Duty', and 'EcoBoost', suggesting different washing settings. The panel also includes labels for 'Rinse', 'Spin', and 'Hold', which are standard washing machine functions. The text 'Dryer' is visible, indicating the drying function. The image is taken from a slightly elevated angle, focusing on the control panel.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 10,
+      "failed": {},
+      "seconds": 25.6
+    },
+    {
+      "image": "VizWiz_val_00003042.jpg",
+      "question": "What product is this?",
+      "answer_type": "other",
+      "crowd": [
+        "s",
+        "hamburger helper",
+        "unanswerable",
+        "mac cheese",
+        "mac n cheese",
+        "beef cheese macaroni",
+        "mac n cheese",
+        "macaroni cheese",
+        "macaroni",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "macaroni and cheese with meat bits",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Sliced fruit",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and unclear to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "macaroni and cheese with meat bits",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 16.3
+    },
+    {
+      "image": "VizWiz_val_00002232.jpg",
+      "question": "What flavor is this?",
+      "answer_type": "other",
+      "crowd": [
+        "rum",
+        "original jamaica rum",
+        "jamaica rum",
+        "rum",
+        "rum",
+        "jamaica rum",
+        "unanswerable",
+        "jamaica rum",
+        "jamaican rum",
+        "jamaica rum"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Jamaica Rum Cream Liqueur",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Jamaica Rum",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "unanswerable",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        }
+      },
+      "consensus": "Jamaica Rum Cream Liqueur",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 21.0
+    },
+    {
+      "image": "VizWiz_val_00000548.jpg",
+      "question": "What's, what's on the screen this time?",
+      "answer_type": "other",
+      "crowd": [
+        "pop up",
+        "computer screen",
+        "window",
+        "unanswerable",
+        "cant make out",
+        "computer will restart several times",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Windows installation screen",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Windows installation screen",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a computer screen with a message indicating that the computer is restarting several times during installation. The text on the screen is partially obscured, but it mentions 'Windows' and 'installation'. The specific details of the message are not fully visible due to the angle and quality of the image.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Windows installation screen",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {
+        "granite3.2-vision:2b": "while checking: granite3.2-vision:2b did not return valid JSON (Expecting property name enclosed in double quotes: line 1 column 17843 (char 17842))"
+      },
+      "seconds": 245.3
+    },
+    {
+      "image": "VizWiz_val_00002328.jpg",
+      "question": "Can you please tell me what the dryer's set to, and which way does it turn it to increase the temperature? Thank you very much.",
+      "answer_type": "other",
+      "crowd": [
+        "currently at normal turn left for jeans then heavy duty",
+        "set at normal no way to change temperature setting",
+        "normal down",
+        "dryer set to normal turn knob counter clockwise for heavy duty loads",
+        "dryer set to normal you turn to left to increase temperature",
+        "normal turn dial 2 notches left to heavy duty",
+        "normal",
+        "unanswerable",
+        "normal turn to left to increase temp",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The dryer's control panel shows settings for different drying modes. The 'AUTO' setting is likely the default, and the 'Timed' and 'Express' options suggest different drying speeds. The 'Casual' setting might be for everyday use, and 'Normal' and 'Dry' are standard settings. The 'Touch Up' button is for adjusting the drying time or temperature. The 'STOP' button is for immediately stopping the drying cycle.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 26.8
+    },
+    {
+      "image": "VizWiz_val_00001678.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "fiber n mor",
+        "fiber n mor",
+        "fiber n mor",
+        "dietary supplement",
+        "fiber n mor dietary supplement",
+        "fiber dietary supplement",
+        "fiber",
+        "fiber pills",
+        "fiber n mor supplements",
+        "fiber"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Fiber-n-Mor dietary supplement bottle",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A bottle of Fiber-n-Mor",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a bottle with a label that reads 'Fiber-n-Mor Dietary Supplement 180 Capsules'. The bottle is white with a green and red logo. The label also includes the text 'Fiber-n-Mor Dietary Supplement 180 Capsules'. The bottle is being held by a person, but the person's face is not visible. The background is blurred, but it appears to be a kitchen counter with a sink and some other items. The lighting in the image is bright, and the colors are natural.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Fiber-n-Mor dietary supplement bottle",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 39.4
+    },
+    {
+      "image": "VizWiz_val_00004018.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "this food item",
+        "ravioli",
+        "ravioli",
+        "ravioli",
+        "ravioli",
+        "chef boyardee mini raviolis",
+        "canned mini ravioli",
+        "ravioli",
+        "chef boya mini ravioli",
+        "mini ravioli"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "can of beef and tomato mixture",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A can of Chef Boyardee",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a can of Chef Boya Beef & Tomato Soup. The can is predominantly red with green and white text. The text reads 'Chef Boya Beef & Tomato Soup' and includes the net weight of 15 oz (425g). The can also features an image of a chef wearing a white hat and a red apron, which is typical for a chef's attire. The background is dark, which makes the colors of the can stand out. The photo is taken from a close-up angle, focusing on the can and the hand holding it.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "can of beef and tomato mixture",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 20.0
+    },
+    {
+      "image": "VizWiz_val_00004301.jpg",
+      "question": "What is in this can?",
+      "answer_type": "other",
+      "crowd": [
+        "green beans",
+        "beans",
+        "green beans",
+        "green beans",
+        "green beans",
+        "green beans",
+        "unanswerable",
+        "green beans",
+        "unanswerable",
+        "green beans"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Green beans in can",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Maple Green",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a can of food, likely a vegetable soup or stew, with a green label and yellow text. The label includes the word 'GREEN' and a picture of a leafy vegetable, possibly spinach or kale. The can is placed on a white surface, and the background is blurred, making it difficult to discern any additional details.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Green beans in can",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 19.7
+    },
+    {
+      "image": "VizWiz_val_00000725.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "belly",
+        "stomach",
+        "belly",
+        "stomach",
+        "abdomen",
+        "stomach",
+        "that stomach",
+        "back",
+        "abs",
+        "stomach"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "person's back, showing abs and waistband",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A person's midriff",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't see the photo you're referring to. Please provide a description or upload the image again.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "person's back, showing abs and waistband",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 14.6
+    },
+    {
+      "image": "VizWiz_val_00000197.jpg",
+      "question": "Can you please tell me the 1-800 number on this card?",
+      "answer_type": "other",
+      "crowd": [
+        "800 735 2929",
+        "1 877 328 9677 1 80 732 2929",
+        "1 800 735 2929",
+        "1 877 328 9677",
+        "8007352929",
+        "1 877 328 9677",
+        "1 877 328 9677",
+        "18773289677",
+        "1 877 328 9677",
+        "18007352929"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "1-800-735-2929",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "1-800-735-2929",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        }
+      },
+      "consensus": "1-800-735-2929",
+      "agreement": "all",
+      "consensus_correct": false,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {
+        "granite3.2-vision:2b": "granite3.2-vision:2b did not return valid JSON (Unterminated string starting at: line 1 column 39 (char 38))"
+      },
+      "seconds": 238.6
+    },
+    {
+      "image": "VizWiz_val_00000803.jpg",
+      "question": "What colors are in this shirt?",
+      "answer_type": "other",
+      "crowd": [
+        "red white",
+        "maroon",
+        "red white",
+        "red white stripes",
+        "red white stripes",
+        "red white",
+        "red white",
+        "red white",
+        "red white",
+        "red white"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "red and white stripes",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Red and white",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a red and white striped shirt. The stripes are horizontal and the shirt appears to be laid out flat. The fabric seems to be smooth and the stripes are evenly spaced. The shirt is the main subject of the image, and there are no other objects or people visible.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "red and white stripes",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 17.0
+    },
+    {
+      "image": "VizWiz_val_00001345.jpg",
+      "question": "What box am I looking at, as in what does the box contain?",
+      "answer_type": "other",
+      "crowd": [
+        "granola bar box",
+        "nature valley roasted almond granola bars",
+        "granola bars",
+        "nature valley",
+        "roasted almond granola bars",
+        "nature valley roasted almond granola bars",
+        "nature valley crunchy granola bars roasted almond flavor",
+        "granola bars",
+        "granola bars",
+        "roasted almond crunchy granola bars"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Nature Valley Crunchy Granola Bars, Roasted Almond flavor, 6x2 bars in pouches, made with wholegrain oats, product of India, on a floral tablecloth with a wooden mat in background.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Granola bars",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a box of Nature Valley crunchy granola bars with a label that reads '100% Natural Snack Roasted Almond'. The box features a picture of the product, which appears to be a granola bar with visible almonds and possibly other nuts. The background includes a floral pattern, and the overall color scheme is warm with yellows and oranges. The photo is taken from a close-up angle, focusing on the product's label and the immediate surroundings.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Nature Valley Crunchy Granola Bars, Roasted Almond flavor, 6x2 bars in pouches, made with wholegrain oats, product of India, on a floral tablecloth with a wooden mat in background.",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {},
+      "seconds": 22.7
+    },
+    {
+      "image": "VizWiz_val_00003374.jpg",
+      "question": "What is the replacement for R22?",
+      "answer_type": "other",
+      "crowd": [
+        "isceon mo99 refrigerant",
+        "isceon",
+        "isceon mo99",
+        "isceon",
+        "google search",
+        "isceon mo",
+        "unanswerable",
+        "isceon mo99",
+        "unanswerable",
+        "isceon mo99"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "ISCEON MO99 refrigerant",
+          "vqa": 0.3333333333333333,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "R290 or R1234yf",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "R22 Replacement refrigerant. ISCEON MO99 refrigerant - DuPont. www2.dupont.com/.../ISCEON_MO99.ht...",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "ISCEON MO99 refrigerant",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.3333333333333333,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {},
+      "seconds": 30.9
+    },
+    {
+      "image": "VizWiz_val_00003100.jpg",
+      "question": "What did I just take a picture of",
+      "answer_type": "other",
+      "crowd": [
+        "grass cement part christmas sweater",
+        "grass",
+        "ground",
+        "grass concrete",
+        "ground",
+        "floor",
+        "dead grass",
+        "cement",
+        "ground",
+        "floor"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "concrete edge and dry grass",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A concrete curb next to dry grass",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description as I don't have the ability to see or analyze images.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "concrete edge and dry grass",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 19.5
+    },
+    {
+      "image": "VizWiz_val_00003656.jpg",
+      "question": "What does the the CAPTCHA say?",
+      "answer_type": "other",
+      "crowd": [
+        "w2nmv5fz",
+        "w2nmv5fz",
+        "w2nmv5fz",
+        "unanswerable",
+        "unanswerable",
+        "w2nmv5fz",
+        "w2nmv5fz",
+        "wvvskz",
+        "w2nvn5fz",
+        "w2nmv5fz"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "W2N55V5Z",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 2,
+      "failed": {
+        "granite3.2-vision:2b": "granite3.2-vision:2b did not return valid JSON (Unterminated string starting at: line 1 column 13 (char 12))"
+      },
+      "seconds": 234.8
+    },
+    {
+      "image": "VizWiz_val_00002512.jpg",
+      "question": "What card is this and is it right side up or upside down thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "news",
+        "9 upside down",
+        "unanswerable",
+        "says 9 right side up",
+        "9 torches",
+        "upside down",
+        "upside down",
+        "unanswerable",
+        "9",
+        "9 only visible word"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Nine of Swords, right side up",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Nine of Clubs, right side up",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a card with a colorful design, featuring a series of vertical green poles with blue tops against a yellow background. The card is upside down, and the text 'NIN' is visible at the bottom right corner.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Nine of Swords, right side up",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 18.1
+    },
+    {
+      "image": "VizWiz_val_00000790.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "radio",
+        "universal remote",
+        "phone",
+        "cellphone",
+        "unanswerable",
+        "cordless phone",
+        "controller",
+        "audio recorder",
+        "recorder",
+        "phone"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A digital camera",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description for the image as it's not visible to me.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 19.1
+    },
+    {
+      "image": "VizWiz_val_00000201.jpg",
+      "question": "Can you read this seven day forecast and write it out in the app so I can use voice over to read it? It's a seven day forecast",
+      "answer_type": "other",
+      "crowd": [
+        "wed 100 thu 101 80 fri 102 80 sat 10280 sun 101 80 mon 10081 tues 100 80",
+        "wed 100 thu 101 fri 100 sat 102 sun 101 mon 100 tue 100",
+        "100 101 100 102 101 100 100",
+        "unanswerable",
+        "100 80 101 81 100 80 102 80 101 80 1000 81 100 80",
+        "yes",
+        "yes",
+        "yes",
+        "wed 100 thu 101 80 fri100 81 sat102 80 sun101 80 mon100 81 tue 100 80",
+        "yes wed 100 thu 100 fri 100 sat 102 sun 101 mon 100 tue 100"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Here is the seven-day forecast.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "unanswerable",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 18.9
+    },
+    {
+      "image": "VizWiz_val_00002044.jpg",
+      "question": "What seasoning is this?",
+      "answer_type": "other",
+      "crowd": [
+        "steak",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "steak rub",
+        "montreal steak",
+        "steak",
+        "steak",
+        "cajun style",
+        "steak"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "unanswerable",
+          "vqa": 1.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 20.2
+    },
+    {
+      "image": "VizWiz_val_00000585.jpg",
+      "question": "What picture is this?",
+      "answer_type": "other",
+      "crowd": [
+        "laptop",
+        "laptop",
+        "laptop",
+        "computer",
+        "laptop computer",
+        "computer",
+        "laptop",
+        "laptop computer",
+        "laptop screen",
+        "laptop"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "laptop on desk next to bed",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A laptop on a table",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a laptop screen with a white background. The laptop is open, and the screen is on, displaying what appears to be a text document or a web page. The text is too small to read clearly, but it seems to be in a language that uses the Latin alphabet. There is a visible keyboard with black keys and a white space bar. The laptop is placed on a wooden surface, possibly a desk or a table. The photo is taken from a low angle, looking up at the laptop screen.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "laptop on desk next to bed",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 39.9
+    },
+    {
+      "image": "VizWiz_val_00003289.jpg",
+      "question": "What's this?",
+      "answer_type": "other",
+      "crowd": [
+        "computer keys",
+        "unanswerable",
+        "computer keyboard",
+        "keyboard colon",
+        "keyboard",
+        "keyboard",
+        "video display",
+        "keyboard",
+        "keyboard",
+        "keyboard"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "keyboard",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A blurry keyboard",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description for the image as it's not visible to me.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "keyboard",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 16.1
+    },
+    {
+      "image": "VizWiz_val_00001477.jpg",
+      "question": "Can you tell what's on this menu?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "unanswerable",
+        "unanswerable",
+        "no",
+        "breakfast",
+        "unanswerable",
+        "no",
+        "food",
+        "no",
+        "unanswerable"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A breakfast menu",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as it's not visible to me. Please upload the image you'd like me to describe.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A breakfast menu",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4225 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 14.5
+    },
+    {
+      "image": "VizWiz_val_00002325.jpg",
+      "question": "What color is this?",
+      "answer_type": "other",
+      "crowd": [
+        "white",
+        "white",
+        "yellow",
+        "yellow",
+        "yellow",
+        "yellow",
+        "white",
+        "yellow",
+        "white",
+        "yellow"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "yellow polo shirt",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Yellow",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a yellow shirt with a logo on the left chest area. The shirt appears to be laid out flat, and the focus is on the upper part of the shirt. The logo is not clearly visible due to the angle and lighting of the photo.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "yellow polo shirt",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 17.7
+    },
+    {
+      "image": "VizWiz_val_00003176.jpg",
+      "question": "can i get the name of the team please for rickey henderson thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "dodgers",
+        "yankees",
+        "oakland athletics",
+        "unanswerable",
+        "oakland athletics",
+        "that information not available on here",
+        "athletics",
+        "wargawrgh",
+        "athletics yankees",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The name of the team is not visible in the provided image. The text is too small and blurry to read clearly. However, it appears to be a sports-related article or a news headline, possibly about a baseball player named Rickey Henderson, as suggested by the visible text 'RICKEY HENDERSON'. The rest of the text is not legible due to the image's low resolution and the angle at which the photo was taken.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 32.8
+    },
+    {
+      "image": "VizWiz_val_00002102.jpg",
+      "question": "Can you tell me what these are called?",
+      "answer_type": "other",
+      "crowd": [
+        "ervgrg",
+        "unanswerable",
+        "cotton",
+        "unanswerable",
+        "unanswerable",
+        "socks",
+        "towels",
+        "unanswerable",
+        "towels",
+        "socks"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "white packaged blanket",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Baby blankets or swaddles",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description of the image as I don't have the ability to see or interpret visual content.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "white packaged blanket",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 19.0
+    },
+    {
+      "image": "VizWiz_val_00003173.jpg",
+      "question": "What is a picture?",
+      "answer_type": "other",
+      "crowd": [
+        "grey kitten",
+        "cat",
+        "kitten",
+        "kitten",
+        "cat",
+        "kitten",
+        "cat",
+        "cat",
+        "kitten",
+        "kitten"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "picture of sleeping kitten",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A sleeping kitten",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a cat's face, with its eyes closed and a relaxed posture. The cat's fur is a mix of light and dark brown, and it appears to be resting on a textured surface, possibly a cushion or a blanket. The cat's fur is well-groomed, and its eyes are a soft, gentle color. The background is blurred, making it difficult to discern any specific details, but the overall impression is one of tranquility and comfort.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "picture of sleeping kitten",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 19.9
+    },
+    {
+      "image": "VizWiz_val_00003147.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "white ginger",
+        "unanswerable",
+        "unanswerable",
+        "white ginger smelling small soap tea packet",
+        "unanswerable",
+        "rug",
+        "carpet",
+        "rug",
+        "rug",
+        "tea"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A small packet on a patterned bedspread",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a fabric with a repeating pattern of white circles on a gold background. The circles are evenly spaced and appear to be made of a smooth, possibly silky material. The fabric seems to be a type of wallpaper or upholstery fabric, given its texture and the way it's laid out.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A small packet on a patterned bedspread",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4220 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 13.0
+    },
+    {
+      "image": "VizWiz_val_00002386.jpg",
+      "question": "Does this microwave say on it?",
+      "answer_type": "other",
+      "crowd": [
+        "5:26",
+        "5:26",
+        "5:26",
+        "5:26",
+        "hamilton beach",
+        "5:26",
+        "hamilton beach",
+        "526",
+        "5:26",
+        "5:26"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "No",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a microwave with a digital display showing '5:26'. The microwave is branded 'Hamilton Beach'. There are also some jars of peanut butter and a red container nearby, but the text on the jars is not clear.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 39.0
+    },
+    {
+      "image": "VizWiz_val_00000359.jpg",
+      "question": "can you tell what restaurant this is?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "big 1",
+        "no",
+        "no",
+        "unanswerable",
+        "no",
+        "no",
+        "big 1",
+        "no",
+        "no",
+        "unanswerable"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "restaurant",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 0,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4224 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 16.5
+    },
+    {
+      "image": "VizWiz_val_00002121.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "plaid",
+        "shirt",
+        "unanswerable",
+        "red plaid",
+        "pink red plaid shirt",
+        "pink plaid",
+        "unanswerable",
+        "unanswerable",
+        "pink red flannel blanket",
+        "pink plaid blanket"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "plaid fabric",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A piece of patterned fabric",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "plaid fabric",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 17.2
+    },
+    {
+      "image": "VizWiz_val_00000510.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "computer on desk",
+        "computer",
+        "computer desk",
+        "desk",
+        "computer on desk",
+        "desktop computer on small desk",
+        "computer desk",
+        "computer",
+        "workstation computer",
+        "computer desk desktop computer on"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "computer desk setup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A computer desk setup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a computer desk with a monitor displaying a colorful desktop wallpaper. There are various items on the desk, including books, a keyboard, and a mouse. The monitor is turned on, showing a green landscape. The desk is positioned against a wall with a shelf above it holding books and other items.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "computer desk setup",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 22.7
+    },
+    {
+      "image": "VizWiz_val_00001628.jpg",
+      "question": "What color is this and what is it?",
+      "answer_type": "other",
+      "crowd": [
+        "grey black michael kors handbag",
+        "white black handbag",
+        "brown handbag",
+        "grey black michael kors hand bag",
+        "tan purse",
+        "white gold print purse",
+        "beige pocketbook",
+        "white black purse",
+        "tan brown purse",
+        "tan brown mk purse"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Michael Kors handbag",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "It is a beige and black patterned handbag.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description. Please provide a clearer image for a more accurate description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Michael Kors handbag",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 14.9
+    },
+    {
+      "image": "VizWiz_val_00002196.jpg",
+      "question": "Can you see the cooking instructions, please?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "no",
+        "no",
+        "unanswerable",
+        "no",
+        "no",
+        "no",
+        "no",
+        "unanswerable",
+        "no",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as it appears to be blurred and lacks clear details.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 16.4
+    },
+    {
+      "image": "VizWiz_val_00001909.jpg",
+      "question": "Which flavor is this?",
+      "answer_type": "other",
+      "crowd": [
+        "broccoli cheese potato",
+        "broccoli cheese potato",
+        "unanswerable",
+        "broccoli cheese potato",
+        "broccoli cheese potato",
+        "broccoli cheese potato",
+        "chicken broccoli cheese potato",
+        "broccoli cheese",
+        "broccoli cheese potato",
+        "hunky"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Chicken Broccoli Cheese with Potato",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Broccoli Cheese with Potato",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a can of Campbell's Chunky soup, which is a type of vegetable soup. The can is red with white text and features a picture of the soup. The text on the can reads 'Campbell's Chunky', 'Full Serving of Vegetables', and 'That Eats Like a Meal'. The background is blurred, but it appears to be an indoor setting with some objects that could be kitchen items.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Chicken Broccoli Cheese with Potato",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {},
+      "seconds": 21.3
+    },
+    {
+      "image": "VizWiz_val_00004194.jpg",
+      "question": "What color is this tablet?",
+      "answer_type": "other",
+      "crowd": [
+        "white",
+        "church notebook",
+        "brown",
+        "white",
+        "white",
+        "white",
+        "tan",
+        "tan",
+        "unanswerable",
+        "whote"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Brown",
+          "vqa": 0.3333333333333333,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The photo shows a tablet with a white label that reads 'Daily Fitness Sleep Journal'. The tablet is placed on a brown surface with a logo of 'Zion Church' in the background.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 13.0
+    },
+    {
+      "image": "VizWiz_val_00000176.jpg",
+      "question": "What's going on on the computer screen?",
+      "answer_type": "other",
+      "crowd": [
+        "just blue green screen",
+        "unanswerable",
+        "looks broken somewhat",
+        "blank screen",
+        "unanswerable",
+        "all blue",
+        "blank lines",
+        "unanswerable",
+        "unanswerable",
+        "blue screen"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A blue and teal gradient background",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description as I don't have the ability to see or interpret images.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 8,
+      "failed": {},
+      "seconds": 14.6
+    },
+    {
+      "image": "VizWiz_val_00001540.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "diet coke soda",
+        "diet coke can",
+        "diet coke",
+        "can diet coke",
+        "diet coke",
+        "diet coke",
+        "diet coke",
+        "coke",
+        "soda",
+        "can diet coke"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A can of Coca-Cola",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who can't see it. Please provide me with a detailed description of the image, including colors, shapes, and any text or symbols that are present. I'll do my best to help you understand how to describe the image in a clear and concise manner.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "A can of Coca-Cola",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4220 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 14.8
+    },
+    {
+      "image": "VizWiz_val_00002578.jpg",
+      "question": "which pot pie is this?",
+      "answer_type": "other",
+      "crowd": [
+        "cheesy ham potato",
+        "cheesy ham potato",
+        "cheesy ham potato",
+        "cheesy ham potato",
+        "deep dish cheesy ham potato",
+        "deep dish cheesy ham potato",
+        "cheese ham potato",
+        "cheesy ham potatoes",
+        "cheese ham potatoe",
+        "banquet"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Banquet pot pie",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "pot pie",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Banquet pot pie",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 20.2
+    },
+    {
+      "image": "VizWiz_val_00000349.jpg",
+      "question": "Can you read the screen? Thank you.",
+      "answer_type": "yes/no",
+      "crowd": [
+        "unanswerable",
+        "yes",
+        "no",
+        "no",
+        "yes",
+        "no",
+        "unanswerable",
+        "no",
+        "unanswerable",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Yes, I can read the screen.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Yes, I can read the screen.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't see the photo you're referring to. Please provide a description or upload the image so I can assist you better.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Yes, I can read the screen.",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 6,
+      "failed": {},
+      "seconds": 22.9
+    },
+    {
+      "image": "VizWiz_val_00000518.jpg",
+      "question": "What is that?",
+      "answer_type": "other",
+      "crowd": [
+        "computers monitor keyboard",
+        "monitor",
+        "computer monitor",
+        "computer screen",
+        "computer",
+        "computer monitor",
+        "computer screen",
+        "desktop",
+        "graph",
+        "graph"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "computer monitor showing a Google Sites page with a table of hearts and a blank table below it",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A computer monitor displaying a spreadsheet",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a computer screen with a web browser open, displaying a webpage with a list of items. The items include 'Home', 'Backspace', 'Delete', 'Enter', and 'Page Up'. The browser's status bar indicates it is connected to the internet, and the time is shown as '6:26/2014'. The keyboard in the foreground is a standard QWERTY layout, and the screen is turned on, with the background being a blurred office environment.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "computer monitor showing a Google Sites page with a table of hearts and a blank table below it",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 22.4
+    },
+    {
+      "image": "VizWiz_val_00004152.jpg",
+      "question": "Which movie is this?",
+      "answer_type": "other",
+      "crowd": [
+        "banden over alle bander",
+        "banoen over alle banoer",
+        "unanswerable",
+        "banden over alle bander",
+        "olsen banden",
+        "banden over alle bander",
+        "banden over alle bander olsen banden",
+        "olsen banden",
+        "olsen banden",
+        "olsen banden"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Olsen-Banden",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too blurry to provide a detailed description or answer the question.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 18.8
+    },
+    {
+      "image": "VizWiz_val_00003085.jpg",
+      "question": "What flavor and brand of cake is this please? Thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "tullys coffee french roast",
+        "unanswerable",
+        "french roast",
+        "unanswerable",
+        "french roast",
+        "unanswerable",
+        "unanswerable",
+        "french roast",
+        "tullys french roast",
+        "not cake"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who can't see it. If you can provide me with a detailed description of the image, I can help you understand how to describe it in a way that's accessible to someone who can't see it.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 9,
+      "failed": {},
+      "seconds": 23.3
+    },
+    {
+      "image": "VizWiz_val_00003105.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "label",
+        "label on wine bottle",
+        "bottle wine",
+        "label",
+        "wine",
+        "bottle",
+        "bottle wine",
+        "label",
+        "wine",
+        "bottle"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "wine bottle label",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A wine bottle label",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a label on a bottle, which appears to be a wine bottle. The label contains text and a barcode. The text on the label includes information about the wine, such as the brand, type, and alcohol content. The barcode is visible and likely contains information about the product for inventory or sales purposes.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "wine bottle label",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 41.3
+    },
+    {
+      "image": "VizWiz_val_00004236.jpg",
+      "question": "What is this item?",
+      "answer_type": "other",
+      "crowd": [
+        "roach tablets",
+        "roach tablets",
+        "roach tablets",
+        "roach tablets",
+        "roach tablets",
+        "famous roach tablets",
+        "roach kill",
+        "roach tablets",
+        "harris famous roach tablets",
+        "roach tablets"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Roach tablets",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A package of Roach Tablets",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a package of Harris Famous Roach Tablets. The tablets are yellow with red and black text. The package has a black background with the product name and brand visible. The tablets are in a sealed plastic bag, and the package appears to be on a flat surface.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "Roach tablets",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 14,
+      "failed": {},
+      "seconds": 43.6
+    },
+    {
+      "image": "VizWiz_val_00002153.jpg",
+      "question": "Can you tell me what tablets these are please? Thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "omeprazole",
+        "omeprazole",
+        "unanswerable",
+        "gastrointestinal",
+        "omperazole 20 mg",
+        "omeprazole",
+        "omeprazole",
+        "omeprazole",
+        "omeprazole 20 mg",
+        "omeprazole 20 mg"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Omeprazole 20mg capsules, 28 count, gastro-resistant, Bristol-Myers Squibb brand, pink box, on patterned fabric background.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Omeprazole capsules",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a textured surface with a pattern that resembles a 3D model or a woven fabric. The colors are predominantly beige and blue, with some areas of white. There is a pink box with text on it, but the text is not fully visible. The box appears to be lying on a surface with a pattern that includes blue and white shapes, possibly a rug or a mat. The photo is taken from a slightly elevated angle, focusing on the texture of the surface and the box.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Omeprazole 20mg capsules, 28 count, gastro-resistant, Bristol-Myers Squibb brand, pink box, on patterned fabric background.",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {
+        "granite3.2-vision:2b": "while checking: granite3.2-vision:2b did not return valid JSON (Unterminated string starting at: line 2072 column 17 (char 25372))"
+      },
+      "seconds": 237.8
+    },
+    {
+      "image": "VizWiz_val_00000624.jpg",
+      "question": "What is in this picture?",
+      "answer_type": "other",
+      "crowd": [
+        "woman sitting hands crossed",
+        "2 people cropped",
+        "person",
+        "people",
+        "woman",
+        "person sitting on chair",
+        "woman",
+        "person sitting in chair",
+        "person sitting on chair",
+        "woman"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "woman sitting on chair",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A person sitting on a couch",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a person wearing a pink shirt with a floral pattern, sitting on a chair. The person is holding a white object in their hands, which appears to be a remote control. The background is blurred, but there seems to be a wall and a chair with a backpack on it. The lighting is dim, and the colors are muted.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "woman sitting on chair",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 22.0
+    },
+    {
+      "image": "VizWiz_val_00001602.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "bologna",
+        "packaged lunch meat",
+        "bottom food container",
+        "unanswerable",
+        "bologna",
+        "unanswerable",
+        "sandwich meat",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A blurry yellow object",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, I can't provide a description as I can't see the image.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 18.8
+    },
+    {
+      "image": "VizWiz_val_00003582.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "can",
+        "split pea soup",
+        "split pea soup",
+        "split pea soup",
+        "split pea soup",
+        "soup",
+        "can split pea soup",
+        "split pea soup",
+        "soup"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "can of creamy split pea soup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A can of soup",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "photo",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "can of creamy split pea soup",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 19.1
+    },
+    {
+      "image": "VizWiz_val_00003610.jpg",
+      "question": "What is this item?",
+      "answer_type": "other",
+      "crowd": [
+        "craft",
+        "unanswerable",
+        "glow in dark toy",
+        "craft kit",
+        "craft kit",
+        "unanswerable",
+        "toy",
+        "beads",
+        "unanswerable",
+        "unanswerable"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Glow-in-the-dark craft kit",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A children's toy box",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a red object, possibly a toy or a piece of clothing, with a blurred background. The main object is red and appears to be a toy or a piece of clothing with a pattern on it. The background is dark and out of focus, making it difficult to identify specific details. The image is not clear enough to provide a detailed description of the object or the background.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Glow-in-the-dark craft kit",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 18.0
+    },
+    {
+      "image": "VizWiz_val_00002291.jpg",
+      "question": "What color is this shirt?",
+      "answer_type": "other",
+      "crowd": [
+        "red",
+        "red",
+        "blue",
+        "red",
+        "red",
+        "red",
+        "red",
+        "ergtetr",
+        "red",
+        "red"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "blue shirt, red shirt, hand, watch",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Blue and red",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a red object, possibly a shirt or a piece of clothing, with a black background. The main focus is on the red color, which is vibrant and stands out against the darker backdrop. The object appears to be in a horizontal position, and there is no clear indication of any text or additional details that can be discerned from this image.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "blue shirt, red shirt, hand, watch",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 15.8
+    },
+    {
+      "image": "VizWiz_val_00001168.jpg",
+      "question": "What is this?",
+      "answer_type": "other",
+      "crowd": [
+        "coke bottle cap",
+        "shirt pin",
+        "coca cola coin",
+        "bottle cap",
+        "coca cola pin",
+        "bottle cap",
+        "coca cola 1940s metal disk",
+        "cocoa cola 1940 coin",
+        "coca cola metal cap",
+        "not clare"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Coca-Cola button",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "A small Coca-Cola collectible card",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Coca-Cola button",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {},
+      "seconds": 12.8
+    },
+    {
+      "image": "VizWiz_val_00002629.jpg",
+      "question": "What is the object in this image?",
+      "answer_type": "other",
+      "crowd": [
+        "monitor",
+        "tv",
+        "several objects",
+        "rug tv",
+        "unanswerable",
+        "tv",
+        "rug",
+        "carpet",
+        "rug",
+        "carpet"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "room with clutter and a TV",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A room with a television and rug",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a cluttered room with various objects, but the main object is not clearly visible due to the blurriness. The room appears to have a mix of items such as boxes, papers, and possibly electronic devices. The colors are muted, with a dominance of browns and grays. The perspective is from a low angle, looking upwards towards the objects on the floor and the wall.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "room with clutter and a TV",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 37.8
+    },
+    {
+      "image": "VizWiz_val_00001892.jpg",
+      "question": "What color is this shirt, please?",
+      "answer_type": "other",
+      "crowd": [
+        "blue",
+        "blue",
+        "blue",
+        "aqua blue",
+        "blue",
+        "blue",
+        "blue",
+        "teal",
+        "aqua",
+        "blue"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "blue shirt",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Blue",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The shirt in the photo is blue.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "blue shirt",
+      "agreement": "all",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 16.9
+    },
+    {
+      "image": "VizWiz_val_00003543.jpg",
+      "question": "What color are these?",
+      "answer_type": "other",
+      "crowd": [
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black",
+        "black"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "black and clear frames, on a light surface, with a ruler behind them, against a white wall.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Black and clear",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a pair of glasses with black frames and clear lenses. The glasses are placed on a surface with a light-colored background. The glasses are positioned in such a way that the lenses are facing upwards, and the frames are oriented horizontally. The glasses appear to be in good condition, with no visible scratches or damage.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "black and clear frames, on a light surface, with a ruler behind them, against a white wall.",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {},
+      "seconds": 18.7
+    },
+    {
+      "image": "VizWiz_val_00000140.jpg",
+      "question": "Can you please describe to me what's on the page and its orientation? Thank you",
+      "answer_type": "other",
+      "crowd": [
+        "sideways car sales ad",
+        "car dealership advertisement",
+        "sales ad landscape",
+        "newspaper advertisement for automobiles",
+        "advertisement sideways",
+        "cars for sale",
+        "sideways ad page",
+        "car dealership advertisements sideways",
+        "car sales ad rotated right 90 degrees",
+        "car dealership ad"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "The page is oriented vertically.",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a partial view of a poster or advertisement. The text is partially obscured, but it appears to be related to a car dealership, possibly for a Dodge vehicle, given the visible word 'Dodge' and the partial image of a car. The text is in a mix of colors, with yellow, red, and black being the most prominent. The visible text includes 'Dodge', 'DEALER', and 'NEW', suggesting it might be advertising a new Dodge dealership or a new model of Dodge vehicles. The rest of the text is not fully visible, making it difficult to provide a complete description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "The page is oriented vertically.",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 0,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4234 tokens) exceeds the available context size (4096 tokens), try increasing it",
+        "granite3.2-vision:2b": "while checking: granite3.2-vision:2b did not return valid JSON (Expecting value: line 1 column 14813 (char 14812))"
+      },
+      "seconds": 243.0
+    },
+    {
+      "image": "VizWiz_val_00001802.jpg",
+      "question": "What is the product?",
+      "answer_type": "other",
+      "crowd": [
+        "neoneosporin",
+        "bug spray",
+        "unanswerable",
+        "neoneosporin",
+        "unanswerable",
+        "unknown",
+        "neoneosporin",
+        "spray",
+        "unanswerable",
+        "neosporin"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Sportsrin topical cream",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description or answer.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Sportsrin topical cream",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {
+        "qwen3-vl:4b-instruct": "qwen3-vl:4b-instruct did not return valid JSON (Unterminated string starting at: line 1 column 12 (char 11))"
+      },
+      "seconds": 89.0
+    },
+    {
+      "image": "VizWiz_val_00001743.jpg",
+      "question": "What kind of lighter is this?",
+      "answer_type": "other",
+      "crowd": [
+        "gun",
+        "butane",
+        "unanswerable",
+        "world gun",
+        "unanswerable",
+        "world gun",
+        "gun",
+        "world gun",
+        "looks like gun",
+        "world gun"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "gun-shaped lighter",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a close-up of a lighter, which appears to be a metallic, possibly brass or bronze, device with a cylindrical shape and a pointed tip. The lighter has a textured surface with concentric circles, which could be a design element or a functional feature. The lighter is resting on a wooden surface, and the background is blurred, making it difficult to discern any additional details. The lighter is the main subject of the photograph.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "gun-shaped lighter",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 20.8
+    },
+    {
+      "image": "VizWiz_val_00004059.jpg",
+      "question": "How clear is this picture?",
+      "answer_type": "other",
+      "crowd": [
+        "clear belmont park",
+        "very clear",
+        "pretty clear",
+        "clear",
+        "somewhat",
+        "knowles park",
+        "clear",
+        "clear",
+        "very",
+        "very"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "clear",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "The picture is somewhat clear.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The photo is clear, showing a person's hand with a tattoo that reads 'BELMOND PARK'. The main object is the hand, and the colors are the blue of the pants and the brown of the shoes. The tattoo is black and white.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "clear",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 1.0,
+      "abstained": false,
+      "disputed_facts": 2,
+      "failed": {},
+      "seconds": 14.2
+    },
+    {
+      "image": "VizWiz_val_00003516.jpg",
+      "question": "Hi, what's outside the window? ",
+      "answer_type": "other",
+      "crowd": [
+        "railing",
+        "railing",
+        "fenced off patio",
+        "building",
+        "bushes",
+        "trees",
+        "building",
+        "deck",
+        "trees building",
+        "trees"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "A mix of buildings and trees",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a view from inside a building, looking out through a window. The main object visible is a brick building with a red roof. There are trees in the background, and the sky is overcast. The photo is taken from a low angle, looking up at the building.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "A mix of buildings and trees",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4224 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 12.2
+    },
+    {
+      "image": "VizWiz_val_00000807.jpg",
+      "question": "What this?",
+      "answer_type": "other",
+      "crowd": [
+        "pc screen",
+        "you cam window on screen",
+        "computer screen",
+        "laptop webcam on",
+        "you can settings window",
+        "computer screen",
+        "you cam",
+        "computer screen",
+        "youcam",
+        "web cam"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "computer screen showing Skype with YouCam app",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A computer screen showing a video chat interface.",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a computer screen with a photo of a camera lens, which is part of the YouCam software interface. The camera lens is blue and is centered on the screen. The background is blurred, making it difficult to discern any additional details. The YouCam logo is visible at the bottom of the screen, indicating that the software is open and running.",
+          "vqa": 0.0,
+          "correct": true
+        }
+      },
+      "consensus": "computer screen showing Skype with YouCam app",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 20.8
+    },
+    {
+      "image": "VizWiz_val_00004243.jpg",
+      "question": "What kind of pop is this?",
+      "answer_type": "other",
+      "crowd": [
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coke",
+        "coca cola",
+        "coca cola",
+        "coke",
+        "coke",
+        "coke"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Coca-Cola pop can",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "Coca-Cola",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Coca-Cola pop can",
+      "agreement": "most",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 5,
+      "failed": {},
+      "seconds": 13.1
+    },
+    {
+      "image": "VizWiz_val_00000766.jpg",
+      "question": "I need to know specifically what is written across the screen on this computer, please.",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "desktop",
+        "window icon icons to left screen",
+        "nothing",
+        "unanswerable",
+        "unanswerable",
+        "nothing",
+        "windows logo",
+        "unanswerable",
+        "nothing written just windows main menu program icons"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as it's not visible to me. Please upload the image you'd like me to describe.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 3,
+      "failed": {},
+      "seconds": 14.7
+    },
+    {
+      "image": "VizWiz_val_00002115.jpg",
+      "question": "What does this say?",
+      "answer_type": "other",
+      "crowd": [
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin2u",
+        "ckin20",
+        "ckin2u"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "CK IN2U",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "CKIN2U",
+          "vqa": 1.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "unanswerable",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "CK IN2U",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 12.5
+    },
+    {
+      "image": "VizWiz_val_00003192.jpg",
+      "question": "What color are these pants?",
+      "answer_type": "other",
+      "crowd": [
+        "dark grey",
+        "grey",
+        "brown",
+        "black",
+        "brown",
+        "brown",
+        "brown",
+        "grey",
+        "brown",
+        "brown grey"
+      ],
+      "models": {
+        "gemma4:e4b": {
+          "answer": "Dark brown",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image is too small and blurry to provide a detailed description.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Dark brown",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 1,
+      "failed": {
+        "qwen3-vl:4b-instruct": "request (4222 tokens) exceeds the available context size (4096 tokens), try increasing it"
+      },
+      "seconds": 12.1
+    },
+    {
+      "image": "VizWiz_val_00001772.jpg",
+      "question": "What is in this box?",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "hamms special light beer",
+        "beer",
+        "unanswerable",
+        "unanswerable",
+        "beer",
+        "beer",
+        "beer",
+        "beer",
+        "special light"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "Beer box",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A framed sign",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a photograph of a large, stylized letter 'U' with a snowy landscape in the background. The letter is white and appears to be made of a material that resembles wood or stone. The text 'Special Light' is visible below the letter, and there is a smaller text 'Can't tell' above it. The photograph is taken from a close-up angle, focusing on the letter and the text. The background features a wintry scene with trees and a snow-covered ground, suggesting a cold, wintery environment.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "Beer box",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 39.1
+    },
+    {
+      "image": "VizWiz_val_00003460.jpg",
+      "question": "What is what is this",
+      "answer_type": "other",
+      "crowd": [
+        "music instruments",
+        "keyboard",
+        "piano keyboard",
+        "keyboard",
+        "piano keyboard",
+        "electric piano keyboard",
+        "music keyboard",
+        "keyboard",
+        "keyboard",
+        "keyboard"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "keyboard under desk",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "gemma4:e4b": {
+          "answer": "A keyboard and cables",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "I'm sorry, but I can't provide a description of the image as I can't see it. However, I can help you understand how to describe an image to someone who can't see it. Please provide me with a detailed description of the image, including the main subject, colors, shapes, and any other notable features.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "keyboard under desk",
+      "agreement": "none",
+      "consensus_correct": true,
+      "consensus_vqa": 0.0,
+      "abstained": false,
+      "disputed_facts": 4,
+      "failed": {},
+      "seconds": 19.6
+    },
+    {
+      "image": "VizWiz_val_00003550.jpg",
+      "question": "Does this sweater and this shirt go together?",
+      "answer_type": "yes/no",
+      "crowd": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "no"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The image shows a pink sweater and a black and white striped shirt. The sweater appears to be made of a soft, possibly woolen material, and the shirt has a classic collar and cuffs. The colors are vibrant and contrast well with each other.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 2,
+      "failed": {
+        "granite3.2-vision:2b": "while checking: granite3.2-vision:2b did not return valid JSON (Unterminated string starting at: line 2057 column 7 (char 25189))"
+      },
+      "seconds": 236.6
+    },
+    {
+      "image": "VizWiz_val_00004271.jpg",
+      "question": "What does this screen say?",
+      "answer_type": "other",
+      "crowd": [
+        "preview this may take awhile your pc will reset",
+        "preview this may take while your pc will restart 45% complete",
+        "45% complete",
+        "45% complete",
+        "this might take while your pc will reset 45% complete",
+        "45% complete",
+        "45% complete",
+        "this might take while your pc will restart",
+        "preview 45% complete",
+        "preview this might take awhile your pc will restart 45% complete"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "Preview, This might take a while. Your PC will res, 45% complete",
+          "vqa": 0.0,
+          "correct": true
+        },
+        "granite3.2-vision:2b": {
+          "answer": "This might take a while. Your PC will resume.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "none",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 7,
+      "failed": {},
+      "seconds": 37.4
+    },
+    {
+      "image": "VizWiz_val_00000034.jpg",
+      "question": "How big do you think my TV is? Thank you.",
+      "answer_type": "other",
+      "crowd": [
+        "unanswerable",
+        "32 inches",
+        "27 inches",
+        "unanswerable",
+        "22 inch",
+        "20 inch",
+        "30 inches",
+        "15 inches",
+        "32 inch",
+        "30 inch"
+      ],
+      "models": {
+        "qwen3-vl:4b-instruct": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "gemma4:e4b": {
+          "answer": "cannot tell",
+          "vqa": 0.0,
+          "correct": false
+        },
+        "granite3.2-vision:2b": {
+          "answer": "The photo does not provide a clear view of the TV size, but it appears to be a standard flat-screen TV, possibly around 32 inches, based on the relative size of the objects on the shelf. The TV is displaying a scene with a person, but the specific content is not discernible due to the image's low resolution and angle.",
+          "vqa": 0.0,
+          "correct": false
+        }
+      },
+      "consensus": "cannot tell",
+      "agreement": "most",
+      "consensus_correct": false,
+      "consensus_vqa": 0.0,
+      "abstained": true,
+      "disputed_facts": 0,
+      "failed": {},
+      "seconds": 20.7
+    }
+  ],
+  "meta": {
+    "val_questions": 4319,
+    "answerable": 2934,
+    "val_zip_sha256": "7cc829c1fbcbc9ffd0a895f9df33d4b365557289c037a578ea9f812e41422469"
+  },
+  "models": [
+    "qwen3-vl:4b-instruct",
+    "gemma4:e4b",
+    "granite3.2-vision:2b"
+  ],
+  "ollama": "v0.40.13",
+  "gpu": "NVIDIA L4"
+}

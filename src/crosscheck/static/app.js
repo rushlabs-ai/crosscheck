@@ -69,6 +69,11 @@ function showResult(result) {
   for (const [model, d] of Object.entries(result.descriptions)) {
     const h = document.createElement("h4");
     h.textContent = model;
+    if (d.answer) {
+      const a = document.createElement("p");
+      a.textContent = "Answer: " + d.answer;
+      box.append(h, a);
+    }
     const p = document.createElement("p");
     p.textContent = d.summary;
     const ul = document.createElement("ul");
@@ -77,7 +82,8 @@ function showResult(result) {
       li.textContent = f;
       ul.append(li);
     }
-    box.append(h, p, ul);
+    if (!d.answer) box.append(h);
+    box.append(p, ul);
   }
   for (const [model, err] of Object.entries(result.failed)) {
     const p = document.createElement("p");
