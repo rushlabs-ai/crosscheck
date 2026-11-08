@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Crosscheck</title>
+<meta name="description" content="Several local vision models describe a photo; hear where they agree and where they disagree.">
+<link rel="stylesheet" href="/app.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>Crosscheck</h1>
+  <p class="lead">Several AI models describe your photo. You hear what they agree on, and where they disagree.</p>
+
+  <form id="form" novalidate>
+    <div class="field">
+      <label for="photo">Photo</label>
+      <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/*" aria-describedby="photo-help">
+      <p id="photo-help" class="help">JPEG or PNG. The photo stays on this computer.</p>
+    </div>
+    <div class="field">
+      <label for="question">Question <span class="optional">(optional)</span></label>
+      <input id="question" name="question" type="text" maxlength="500" autocomplete="off"
+             aria-describedby="question-help">
+      <p id="question-help" class="help">For example: What does the label say?</p>
+    </div>
+    <div class="field check">
+      <input id="speak" type="checkbox">
+      <label for="speak">Also read the result aloud with this browser's voice</label>
+    </div>
+    <button id="submit" type="submit">Check photo</button>
+  </form>
+
+  <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+
+  <section id="result" tabindex="-1" aria-labelledby="result-heading" hidden>
+    <h2 id="result-heading">Result</h2>
+    <p id="spoken" class="spoken"></p>
+
+    <h3 id="disputed-heading">Where the models disagree</h3>
+    <ul id="disputed" aria-labelledby="disputed-heading"></ul>
+
+    <h3 id="agreed-heading">What every model agrees on</h3>
+    <ul id="agreed" aria-labelledby="agreed-heading"></ul>
+
+    <h3 id="unconfirmed-heading">Details not every model could judge</h3>
+    <ul id="unconfirmed" aria-labelledby="unconfirmed-heading"></ul>
+
+    <details>
+      <summary>Each model's own description</summary>
+      <div id="descriptions"></div>
+    </details>
+    <p id="timing" class="help"></p>
+  </section>
+
+  <p class="note">Agreement is not proof: models can make the same mistake. For anything that matters,
+  such as medicine, money or safety, confirm with a person or another trusted source.</p>
+</main>
+</body>
+</html>

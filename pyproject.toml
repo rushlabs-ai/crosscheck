@@ -1,0 +1,39 @@
+[project]
+name = "crosscheck-vision"
+version = "0.1.0"
+description = "Several local vision models describe a photo; hear where they agree and where they disagree. For blind and low-vision users."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Rush Labs", email = "admin@rushlabs.ai" }]
+keywords = ["accessibility", "blind", "low-vision", "image-description", "ollama", "vision-language-model"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Web Environment",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Adaptive Technologies",
+]
+# No runtime dependencies: the standard library only.
+dependencies = []
+
+[project.scripts]
+crosscheck = "crosscheck.cli:main"
+
+[project.urls]
+Homepage = "https://rushlabs.ai/lab"
+Source = "https://github.com/rushlabs-ai/crosscheck"
+Issues = "https://github.com/rushlabs-ai/crosscheck/issues"
+
+[build-system]
+# Exact pin, at least 7 days old when chosen (supply-chain policy).
+requires = ["uv_build==0.13.6"]
+build-backend = "uv_build"
+
+[tool.uv]
+exclude-newer = "2026-10-30T00:00:00Z"
+
+[tool.uv.build-backend]
+module-name = "crosscheck"
