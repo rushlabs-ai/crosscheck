@@ -6,6 +6,8 @@ import base64
 import http.client
 import io
 import json
+import shutil
+import subprocess
 import sys
 import tempfile
 import threading
@@ -156,6 +158,135 @@ class ServerTests(unittest.TestCase):
         self.assertEqual(len(data["result"]["disputed"]), 2)
         self.assertNotIn("image", data)
         self.assertEqual(self.request("GET", "/api/jobs/nope")[0], 404)
+
+
+class LanServerTests(unittest.TestCase):
+    """--lan: other devices pair with a code; this computer (loopback) is trusted unless told not to."""
+
+    def setUp(self):
+        self.fake = FakeOllama()
+        self.codes = []
+        self.httpd = server.serve(Ollama(self.fake.url), ["a", "b"], port=0, lan=True,
+                                  on_new_code=self.codes.append, trust_loopback=False)
+        self.port = self.httpd.server_address[1]
+        threading.Thread(target=self.httpd.serve_forever, daemon=True).start()
+
+    def tearDown(self):
+        self.httpd.shutdown()
+        self.httpd.server_close()
+        self.fake.__exit__()
+
+    def request(self, method, path, body=None, headers=None, host=None):
+        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=10)
+        h = {"Host": host or f"192.168.1.20:{self.port}"}
+        h.update(headers or {})
+        data = json.dumps(body).encode() if isinstance(body, dict) else body
+        if data is not None:
+            h.setdefault("Content-Type", "application/json")
+        conn.request(method, path, body=data, headers=h)
+        resp = conn.getresponse()
+        return resp.status, dict(resp.getheaders()), resp.read()
+
+    def pair(self):
+        status, headers, body = self.request("POST", "/api/pair", {"code": self.httpd.pairing.code})
+        self.assertEqual(status, 200, body)
+        cookie = headers["Set-Cookie"]
+        for attr in ("HttpOnly", "SameSite=Strict", "Path=/"):
+            self.assertIn(attr, cookie)
+        return cookie.split(";", 1)[0]
+
+    def test_hosts(self):
+        self.assertEqual(self.request("GET", "/")[0], 200)  # an IP address is fine on the network
+        self.assertEqual(self.request("GET", "/", host=f"localhost:{self.port}")[0], 200)
+        self.assertEqual(self.request("GET", "/", host=f"[fe80::1]:{self.port}")[0], 200)
+        self.assertEqual(self.request("GET", "/", host=f"evil.example:{self.port}")[0], 403)  # DNS rebinding
+        self.assertEqual(self.request("GET", "/", host="192.168.1.20:1")[0], 403)
+
+    def test_everything_but_the_page_needs_pairing(self):
+        status, _, body = self.request("GET", "/api/session")
+        self.assertEqual(json.loads(body), {"pairing": True, "paired": False})
+        img = "data:image/png;base64," + base64.b64encode(PNG).decode()
+        self.assertEqual(self.request("POST", "/api/check", {"image": img})[0], 401)
+        self.assertEqual(self.request("GET", "/api/info")[0], 401)
+        self.assertEqual(self.request("GET", "/api/jobs/x")[0], 401)
+        self.assertEqual(self.request("GET", "/api/session", headers={"Cookie": "cc_session=forged"})[0], 200)
+        self.assertEqual(self.request("GET", "/api/info", headers={"Cookie": "cc_session=forged"})[0], 401)
+
+    def test_pair_then_check(self):
+        cookie = self.pair()
+        self.assertEqual(json.loads(self.request("GET", "/api/session", headers={"Cookie": cookie})[2])["paired"], True)
+        img = "data:image/png;base64," + base64.b64encode(PNG).decode()
+        status, _, body = self.request("POST", "/api/check", {"image": img},
+                                       headers={"Cookie": cookie, "Origin": f"http://192.168.1.20:{self.port}"})
+        self.assertEqual(status, 202, body)
+
+    def test_wrong_codes_replace_the_code(self):
+        first = self.httpd.pairing.code
+        wrong = "000000" if first != "000000" else "111111"
+        for left in (4, 3, 2, 1):
+            status, _, body = self.request("POST", "/api/pair", {"code": wrong})
+            self.assertEqual((status, json.loads(body)["attempts_left"]), (403, left))
+        status, _, body = self.request("POST", "/api/pair", {"code": wrong})
+        self.assertEqual((status, json.loads(body)["attempts_left"]), (403, 0))
+        self.assertEqual(self.codes, [self.httpd.pairing.code])
+        status, _, _ = self.request("POST", "/api/pair", {"code": self.httpd.pairing.code})
+        self.assertEqual(status, 429)  # paused, even for the right code
+        self.httpd.pairing._locked_until = 0.0  # skip the minute
+        if self.httpd.pairing.code != first:
+            self.assertEqual(self.request("POST", "/api/pair", {"code": first})[0], 403)
+        self.pair()  # the new code works
+
+    def test_cross_origin_requests_are_refused(self):
+        status, _, _ = self.request("POST", "/api/pair", {"code": self.httpd.pairing.code},
+                                    headers={"Origin": "http://evil.example"})
+        self.assertEqual(status, 403)
+        status, _, _ = self.request("POST", "/api/pair", {"code": "1"}, headers={"Content-Type": "text/plain"})
+        self.assertEqual(status, 415)
+
+    def test_this_computer_is_trusted_by_default(self):
+        httpd = server.serve(Ollama(self.fake.url), ["a", "b"], port=0, lan=True)
+        threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        try:
+            conn = http.client.HTTPConnection("127.0.0.1", httpd.server_address[1], timeout=10)
+            conn.request("GET", "/api/info", headers={"Host": f"127.0.0.1:{httpd.server_address[1]}"})
+            self.assertEqual(conn.getresponse().status, 200)
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
+
+    def test_without_lan_ip_hosts_are_refused(self):
+        httpd = server.serve(Ollama(self.fake.url), ["a", "b"], port=0)
+        threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        try:
+            conn = http.client.HTTPConnection("127.0.0.1", httpd.server_address[1], timeout=10)
+            conn.request("GET", "/", headers={"Host": f"192.168.1.20:{httpd.server_address[1]}"})
+            self.assertEqual(conn.getresponse().status, 403)
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
+
+    @unittest.skipUnless(shutil.which("openssl"), "needs the openssl command to make a test certificate")
+    def test_https(self):
+        import ssl
+
+        with tempfile.TemporaryDirectory() as d:
+            cert, key = f"{d}/cert.pem", f"{d}/key.pem"
+            subprocess.run(["openssl", "req", "-x509", "-newkey", "rsa:2048", "-nodes", "-days", "1", "-subj", "/CN=127.0.0.1",
+                            "-keyout", key, "-out", cert], check=True, capture_output=True)
+            httpd = server.serve(Ollama(self.fake.url), ["a", "b"], port=0, lan=True, tls=(cert, key), trust_loopback=False)
+            threading.Thread(target=httpd.serve_forever, daemon=True).start()
+            try:
+                port = httpd.server_address[1]
+                conn = http.client.HTTPSConnection("127.0.0.1", port, timeout=10, context=ssl._create_unverified_context())
+                conn.request("POST", "/api/pair", body=json.dumps({"code": httpd.pairing.code}),
+                             headers={"Host": f"127.0.0.1:{port}", "Content-Type": "application/json",
+                                      "Origin": f"https://127.0.0.1:{port}"})
+                resp = conn.getresponse()
+                self.assertEqual(resp.status, 200)
+                self.assertIn("Secure", resp.getheader("Set-Cookie"))
+            finally:
+                httpd.shutdown()
+                httpd.server_close()
 
 
 class CliTests(unittest.TestCase):

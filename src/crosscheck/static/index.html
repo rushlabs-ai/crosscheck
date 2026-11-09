@@ -14,11 +14,29 @@
   <h1>Crosscheck</h1>
   <p class="lead">Several AI models describe your photo. You hear what they agree on, and where they disagree.</p>
 
+  <section id="pair" aria-labelledby="pair-heading" hidden>
+    <h2 id="pair-heading">Connect this device</h2>
+    <form id="pair-form" novalidate>
+      <div class="field">
+        <label for="code">Pairing code</label>
+        <input id="code" name="code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="7"
+               autocomplete="one-time-code" aria-describedby="code-help">
+        <p id="code-help" class="help">The 6-digit code shown on the computer running Crosscheck.</p>
+      </div>
+      <button id="pair-submit" type="submit">Connect</button>
+    </form>
+  </section>
+
   <form id="form" novalidate>
+    <div class="field" id="camera-field" hidden>
+      <label for="camera">Take a photo</label>
+      <input id="camera" name="camera" type="file" accept="image/*" capture="environment" aria-describedby="camera-help">
+      <p id="camera-help" class="help">Opens the camera.</p>
+    </div>
     <div class="field">
-      <label for="photo">Photo</label>
+      <label for="photo">Choose a photo</label>
       <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/*" aria-describedby="photo-help">
-      <p id="photo-help" class="help">JPEG or PNG. The photo stays on this computer.</p>
+      <p id="photo-help" class="help">JPEG or PNG. The photo goes only to the computer running Crosscheck.</p>
     </div>
     <div class="field">
       <label for="question">Question <span class="optional">(optional)</span></label>

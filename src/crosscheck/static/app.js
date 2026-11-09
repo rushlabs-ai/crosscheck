@@ -3,6 +3,9 @@
 // Everything from the server is inserted with textContent, never as HTML.
 const $ = (id) => document.getElementById(id);
 const MAX_SIDE = 1600;
+let chosen = null; // the photo most recently taken or chosen
+
+class NeedsPairing extends Error {}
 
 function setStatus(text) {
   const el = $("status");
@@ -107,6 +110,7 @@ async function poll(job) {
   for (;;) {
     await new Promise((r) => setTimeout(r, 1000));
     const resp = await fetch("/api/jobs/" + encodeURIComponent(job));
+    if (resp.status === 401) throw new NeedsPairing();
     const data = await resp.json();
     if (data.state === "done") return data.result;
     if (data.state === "error" || !resp.ok) throw new Error(data.message || data.error || "Something went wrong.");
@@ -116,10 +120,10 @@ async function poll(job) {
 
 async function onSubmit(event) {
   event.preventDefault();
-  const file = $("photo").files[0];
+  const file = chosen;
   if (!file) {
-    setStatus("Choose a photo first.");
-    $("photo").focus();
+    setStatus("Take or choose a photo first.");
+    ($("camera-field").hidden ? $("photo") : $("camera")).focus();
     return;
   }
   const button = $("submit");
@@ -134,18 +138,83 @@ async function onSubmit(event) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ image, question: $("question").value }),
     });
+    if (resp.status === 401) throw new NeedsPairing();
     const data = await resp.json();
     if (!resp.ok) throw new Error(data.error || "The photo was not accepted.");
     const result = await poll(data.job);
     setStatus("Result ready.");
     showResult(result);
   } catch (err) {
-    setStatus(err.message);
+    if (err instanceof NeedsPairing) showPairing("This device needs the pairing code again.");
+    else setStatus(err.message);
   } finally {
     button.disabled = false;
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function showPairing(message) {
+  $("form").hidden = true;
+  $("pair").hidden = false;
+  setStatus(message || "Enter the pairing code shown on the computer running Crosscheck.");
+  $("code").focus();
+}
+
+async function onPair(event) {
+  event.preventDefault();
+  const code = $("code").value.replace(/\D/g, "");
+  if (code.length !== 6) {
+    setStatus("Enter the 6 digits of the pairing code.");
+    $("code").focus();
+    return;
+  }
+  const button = $("pair-submit");
+  button.disabled = true;
+  try {
+    const resp = await fetch("/api/pair", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || "Pairing failed.");
+    $("pair").hidden = true;
+    $("form").hidden = false;
+    setStatus("Connected. You can check photos now.");
+    ($("camera-field").hidden ? $("photo") : $("camera")).focus();
+  } catch (err) {
+    setStatus(err.message);
+    $("code").select();
+  } finally {
+    button.disabled = false;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
   $("form").addEventListener("submit", onSubmit);
+  $("pair-form").addEventListener("submit", onPair);
+  if (window.matchMedia("(pointer: coarse)").matches) $("camera-field").hidden = false; // phones and tablets
+  for (const id of ["camera", "photo"]) {
+    $(id).addEventListener("change", (event) => {
+      if (event.target.files[0]) {
+        chosen = event.target.files[0];
+        setStatus("Photo ready. Press Check photo.");
+      }
+    });
+  }
+  // A link like http://192.168.1.20:8765/?code=123456 pairs in one step; the code is then
+  // removed from the address bar and history.
+  const linkCode = new URLSearchParams(location.search).get("code");
+  if (linkCode) history.replaceState(null, "", location.pathname);
+  try {
+    const session = await (await fetch("/api/session")).json();
+    if (session.pairing && !session.paired) {
+      showPairing();
+      if (linkCode) {
+        $("code").value = linkCode;
+        $("pair-form").requestSubmit();
+      }
+    }
+  } catch {
+    /* an older server without sessions: nothing to pair */
+  }
 });
