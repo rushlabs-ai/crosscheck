@@ -43,15 +43,37 @@ def _check_installed(client: Ollama, models: list[str]) -> int:
 
 
 def cmd_serve(args: argparse.Namespace) -> int:
-    from .server import serve
+    from .server import lan_addresses, serve
 
+    if bool(args.tls_cert) != bool(args.tls_key):
+        print("crosscheck: --tls-cert and --tls-key go together", file=sys.stderr)
+        return 2
     client = Ollama(args.ollama)
     models = _models(args.models)
     if (code := _check_installed(client, models)) != 0:
         return code
-    httpd = serve(client, models, args.port)
-    url = f"http://127.0.0.1:{httpd.server_address[1]}/"
+    tls = (args.tls_cert, args.tls_key) if args.tls_cert else None
+    scheme = "https" if tls else "http"
+
+    def announce(new_code: str) -> None:
+        print(f"Too many wrong codes. New pairing code: {' '.join(new_code)}", flush=True)
+
+    try:
+        httpd = serve(client, models, args.port, lan=args.lan, tls=tls, on_new_code=announce)
+    except (OSError, ValueError) as e:
+        print(f"crosscheck: could not start the web app: {e}", file=sys.stderr)
+        return 1
+    port = httpd.server_address[1]
+    url = f"{scheme}://127.0.0.1:{port}/"
     print(f"Crosscheck is running at {url} with {', '.join(models)}. Press Ctrl+C to stop.")
+    if args.lan and httpd.pairing:
+        addresses = lan_addresses() or ["<this computer's IP address>"]
+        print("On your phone, on the same Wi-Fi, open: " + "  or  ".join(f"{scheme}://{ip}:{port}/" for ip in addresses))
+        print(f"Pairing code: {' '.join(httpd.pairing.code)}")
+        print("Other devices on this network can reach the page, but nothing works without the code.")
+        if not tls:
+            print("Photos travel over your network unencrypted: use --lan only on a network you trust, "
+                  "or add --tls-cert and --tls-key.")
     if not args.no_browser:
         webbrowser.open(url)
     try:
@@ -99,6 +121,10 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("serve", parents=[common], help="Start the web app on 127.0.0.1")
     s.add_argument("--port", type=int, default=8765)
+    s.add_argument("--lan", action="store_true",
+                   help="also listen on your network so a phone can use it (devices pair with a code)")
+    s.add_argument("--tls-cert", help="PEM certificate for HTTPS (with --tls-key)")
+    s.add_argument("--tls-key", help="PEM private key for HTTPS")
     s.add_argument("--no-browser", action="store_true", help="Do not open a browser")
     s.set_defaults(func=cmd_serve)
     d = sub.add_parser("describe", parents=[common], help="Check one photo in the terminal")

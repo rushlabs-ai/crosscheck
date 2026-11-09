@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0
+
+- `crosscheck serve --lan`: use Crosscheck from a phone on your home Wi-Fi. Devices pair once with a
+  6-digit code shown on the computer (after five wrong tries: a new code and a one-minute pause);
+  the computer itself needs no code. **Take a photo** opens the phone's camera. Optional HTTPS with `--tls-cert` / `--tls-key`.
+- Host checks now allow IP addresses on the network but still refuse domain names (DNS rebinding);
+  POSTs must be same-origin.
+
 ## 0.2.0
 
 - Questions get a short, direct answer first, with whether the models agree on it. The models

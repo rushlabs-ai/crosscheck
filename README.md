@@ -74,6 +74,25 @@ about 30–90 seconds per photo while Ollama swaps the models in and out; a CPU 
 The web app shrinks the photo in your browser before sending it, which also removes metadata
 such as GPS location.
 
+### From your phone
+
+```sh
+crosscheck serve --lan
+```
+
+Crosscheck then also listens on your home network and prints an address such as
+`http://192.168.1.20:8765/` and a 6-digit pairing code. Open the address on your phone (same Wi-Fi),
+enter the code once, and use **Take a photo** to open the camera. A link with the code,
+`http://192.168.1.20:8765/?code=123456`, pairs in one step.
+
+- Every device except the computer running Crosscheck must enter the code. After five wrong
+  codes a new one is shown and pairing pauses for a minute, so guessing would take months.
+  Paired devices get a session cookie for 30 days.
+- The page uses the phone's normal camera picker, which works without HTTPS. Photos then travel
+  over your Wi-Fi unencrypted, so use `--lan` only on a network you trust, or add
+  `--tls-cert cert.pem --tls-key key.pem` for HTTPS (a self-signed certificate works after your
+  phone's warning).
+
 ## Evaluation
 
 `eval/modal_eval.py` runs Crosscheck on 100 photos taken by blind people, from the VizWiz-VQA
@@ -107,15 +126,19 @@ models (for example on a 24 GB GPU) improve these numbers.
 
 ## Privacy and security
 
-- Runs on 127.0.0.1 only. Photos stay in memory and go only to your Ollama. Nothing is logged.
-- Requests must come from the app itself: a non-local `Host` (DNS rebinding) or a foreign
-  `Origin` (another website) is refused. A strict Content-Security-Policy blocks outside content.
+- Runs on 127.0.0.1 only unless you pass `--lan`. Photos stay in memory and go only to your
+  Ollama. Nothing is logged.
+- With `--lan`, other devices must pair with a code shown on the computer. The exemption for the
+  computer itself is decided by the connection's address, never by a header a client controls.
+- Requests must come from the app itself: a `Host` that is not localhost or an IP address (DNS
+  rebinding) or a foreign `Origin` (another website) is refused. A strict Content-Security-Policy
+  blocks outside content.
 - Model output is shown as text, never as HTML.
 
 ## Status and limits
 
-- v0.1, for desktop browsers on the same computer. Using a phone camera over Wi-Fi needs HTTPS
-  and is planned for v0.2.
+- Phones work over your home Wi-Fi with `--lan` (see above). Tested with Chrome's phone
+  emulation; reports from real iPhones and Android phones with VoiceOver or TalkBack are welcome.
 - Merging facts across models uses word overlap, so two phrasings of one fact are sometimes
   listed separately; each still gets judged.
 - Small local models are weaker than the cloud models in the study, and their agreement is a
