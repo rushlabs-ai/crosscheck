@@ -1,7 +1,7 @@
 [project]
 name = "crosscheck-vision"
 version = "0.3.0"
-description = "Several local vision models describe a photo; hear where they agree and where they disagree. For blind and low-vision users."
+description = "Several local vision models describe a photo, and you hear where they agree and where they disagree. For blind and low-vision users."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"

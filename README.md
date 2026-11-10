@@ -98,7 +98,7 @@ enter the code once, and use **Take a photo** to open the camera. A link with th
 `eval/modal_eval.py` runs Crosscheck on 100 photos taken by blind people, from the VizWiz-VQA
 validation set (CC BY 4.0), each with the question its photographer asked and ten crowd answers.
 `eval/rescore.py` then grades every answer against the crowd answers with a separate text model
-(Qwen3-8B), because word matching misjudges free-form answers. Results on one NVIDIA L4, all three
+(Qwen3-8B), because word matching misjudges free-form answers. Results on one NVIDIA A10, all three
 default models loaded (`eval/results/vizwiz-judged.json`):
 
 | | Result |
