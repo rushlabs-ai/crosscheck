@@ -112,7 +112,7 @@ def cmd_describe(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="crosscheck", description="Several local vision models describe a photo; "
+    p = argparse.ArgumentParser(prog="crosscheck", description="Several local vision models describe a photo, and you "
                                 "hear where they agree and where they disagree.")
     p.add_argument("--version", action="version", version=f"crosscheck {__version__}")
     common = argparse.ArgumentParser(add_help=False)
