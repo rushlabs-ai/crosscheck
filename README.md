@@ -145,7 +145,7 @@ models (for example on a 24 GB GPU) improve these numbers.
   weaker signal (see Evaluation). Treat "the models agree" as encouraging, never as proof.
 
 Feedback from blind and low-vision users matters most: please open an issue or email
-admin@rushlabs.ai.
+vayun@rushlabs.ai.
 
 ## Development
 
