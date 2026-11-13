@@ -1,5 +1,7 @@
 # Crosscheck
 
+[![CI](https://github.com/rushlabs-ai/crosscheck/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rushlabs-ai/crosscheck/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/crosscheck-vision)](https://pypi.org/project/crosscheck-vision/) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](https://github.com/rushlabs-ai/crosscheck/blob/main/LICENSE)
+
 **A second opinion for AI photo descriptions.** Several vision models, running on your own
 computer, describe the same photo. Crosscheck tells you what they all agree on, and, first and
 most clearly, where they disagree.
@@ -60,12 +62,12 @@ confirm with a person or another trusted source. Crosscheck never says "verified
    It opens http://127.0.0.1:8765 in your browser.
 
 Choose other models with `--models a,b,c` (or `CROSSCHECK_MODELS`). With a 12–16 GB GPU, expect
-about 30–90 seconds per photo while Ollama swaps the models in and out; a CPU works, slowly.
+about 30–90 seconds per photo while Ollama swaps the models in and out. A CPU works, slowly.
 
 ## Using it
 
 - **Web app**: choose a photo, optionally ask a question ("What does the label say?"), press
-  *Check photo*. Progress is announced; when the result is ready, focus moves to it. Everything
+  *Check photo*. Progress is announced, and when the result is ready, focus moves to it. Everything
   works with the keyboard and a screen reader. A checkbox can also read the result aloud with
   the browser's own voice.
 - **Terminal**: `crosscheck describe photo.jpg --question "What does the label say?"`, or `--json`
@@ -118,10 +120,10 @@ What this means:
   blurry, dark or badly framed, which is exactly when blind users most need help and when small
   models are weakest.
 - An earlier version compared answers by their words and used Granite 3.2 Vision, which refused
-  38% of photos; it flagged almost everything and told users nothing. Its results are kept in
+  38% of photos. It flagged almost everything and told users nothing. Its results are kept in
   `eval/results/vizwiz-v1-granite-lexical.json`.
 
-The ASSETS '25 study used large cloud models; we have not yet measured how much bigger local
+The ASSETS '25 study used large cloud models. We have not yet measured how much bigger local
 models (for example on a 24 GB GPU) improve these numbers.
 
 ## Privacy and security
@@ -138,9 +140,9 @@ models (for example on a 24 GB GPU) improve these numbers.
 ## Status and limits
 
 - Phones work over your home Wi-Fi with `--lan` (see above). Tested with Chrome's phone
-  emulation; reports from real iPhones and Android phones with VoiceOver or TalkBack are welcome.
+  emulation. Reports from real iPhones and Android phones with VoiceOver or TalkBack are welcome.
 - Merging facts across models uses word overlap, so two phrasings of one fact are sometimes
-  listed separately; each still gets judged.
+  listed separately, but each still gets judged.
 - Small local models are weaker than the cloud models in the study, and their agreement is a
   weaker signal (see Evaluation). Treat "the models agree" as encouraging, never as proof.
 
